@@ -1,0 +1,6 @@
+#### Local Events for Everybody
+In this project, as a Developer and Project Manager, I was responsible for the entire **graphical & interactive** direction of the website. This included the implementation of various features already available to users on an older iteration to not lose any functionality for the user.
+
+**Branding** was a crucial aspect of this project. I aimed to create a cohesive and engaging visual identity that resonated with the **target audience** and allowed the project to be recognized among the local community by incorporating existing colorschemes and logos. This did involve extensive collaboration with stakeholders to ensure that the final design aligned with the project's goals and values.
+
+The website is developed using **React.js** for the frontend and **Node.js** for the backend to handle data management and API requests. As my first full-stack project, I gained valuable experience in both frontend and backend development, as well as in project management and collaboration with my team.
