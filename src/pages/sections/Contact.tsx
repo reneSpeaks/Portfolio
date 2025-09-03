@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { SiCss3, SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
+import { toast } from 'react-hot-toast';
 
 import CloseButton from '@components/CloseButton';
 
@@ -11,12 +12,45 @@ import { type PageState } from '@config/Page';
 import { type Inputs } from '@config/contact/Types';
 
 export default function Contact() {
-	const { register, handleSubmit } = useForm<Inputs>();
+	const { register, handleSubmit, reset } = useForm<Inputs>();
 	const { pageState, setPageState } = usePageState();
 
-	// TODO: IMPLEMENT FORM SUBMISSION
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		console.log(data);
+	// Send contact form data to API endpoint
+	const onSubmit: SubmitHandler<Inputs> = async (data) => {
+		try {
+			const response = await fetch(import.meta.env.VITE_API_URL + 'mail/send', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					name: data.name,
+					email: data.email,
+					message: data.message
+				})
+			});
+
+			if (!response.ok) throw new Error('Failed to send message');
+
+			// Optionally handle success (e.g., show a message or reset form)
+			toast.custom((t) => (
+				<div
+					className={`${
+						t.visible ? 'animate-toast-enter' : 'animate-toast-leave'
+					} bg-theme-accent-100 pointer-events-auto px-20 py-3 font-black`}>
+					Message Sent
+					{/* <div className="absolute top-0 right-0 p-1 pr-2">
+						<button onClick={() => toast.dismiss(t.id)} className="hover:text-theme-accent-200">
+							X
+						</button>
+					</div> */}
+				</div>
+			));
+			reset();
+			setPageState('Default' as PageState);
+		} catch (error) {
+			console.error('Error sending message:', error);
+		}
 	};
 
 	return (
@@ -37,7 +71,13 @@ export default function Contact() {
 					<span className="text-md mt-1">
 						<i>New projects. freelance inquiries or even a coffee.</i>
 					</span>
-					<form id="contact-form" onSubmit={handleSubmit(onSubmit)} className="z-59 mt-5 flex flex-col gap-4">
+					<form
+						id="contact-form"
+						onSubmit={(e) => {
+							e.preventDefault();
+							void handleSubmit(onSubmit)(e);
+						}}
+						className="z-59 mt-5 flex flex-col gap-4">
 						<label htmlFor="name">Name *</label>
 						<input
 							type="text"

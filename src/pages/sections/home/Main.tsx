@@ -241,6 +241,7 @@ export default function Main() {
 				aria-hidden="true"
 				className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-15"
 			/>
+
 			<div className="from-primary-100 to-accent-100 absolute top-0 z-11 h-1 w-full bg-gradient-to-l"></div>
 			<div className="from-primary-100 to-accent-100 absolute bottom-0 z-11 h-1 w-full bg-gradient-to-r"></div>
 		</main>

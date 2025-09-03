@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
 
@@ -14,7 +15,8 @@ import { IntroProvider } from '@context/IntroContext';
 import { MobileProvider } from '@context/MobileContext';
 import { PageStateProvider } from '@context/PageStateContext';
 import { ThemeProvider } from '@context/ThemeContext';
-import { useEffect } from 'react';
+
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 	const location = useLocation();
@@ -38,6 +40,7 @@ function App() {
 									<Route path="/imprint" element={<Imprint />} />
 								</Routes>
 							</AnimatePresence>
+							<Toaster position="bottom-right" reverseOrder={false} />
 						</PageWrapper>
 						<Footer />
 					</ThemeProvider>
