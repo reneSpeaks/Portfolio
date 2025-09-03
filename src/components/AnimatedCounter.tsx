@@ -22,7 +22,7 @@ export default function AnimatedCounter({ from, to, animationOptions }: Animated
 
 		if (pageState === 'Intro') {
 			const controls = animate(from, to, {
-				duration: 5,
+				duration: 2,
 				ease: 'easeInOut',
 				...animationOptions,
 				onUpdate(value) {

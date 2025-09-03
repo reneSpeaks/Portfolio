@@ -13,7 +13,7 @@ function Loading() {
 	const firstLoad = useRef(true);
 
 	useEffect(() => {
-		const timer = setTimeout(() => setShowSplash(false), 7000);
+		const timer = setTimeout(() => setShowSplash(false), 3000);
 		return () => clearTimeout(timer);
 	}, []);
 
@@ -22,7 +22,7 @@ function Loading() {
 			if (!showSplash) firstLoad.current = false;
 			const timeout = setTimeout(() => {
 				setPageState('Default');
-			}, 6500);
+			}, 2500);
 			return () => clearTimeout(timeout);
 		}
 	}, [pageState, setPageState, showSplash]);
