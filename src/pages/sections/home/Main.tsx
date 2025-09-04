@@ -19,6 +19,7 @@ export default function Main() {
 	const { pageState, setPageState } = usePageState();
 	const [quote, setQuote] = useState<Quotes | null>(null);
 	const [isStopped, setIsStopped] = useState(true);
+	const [capClicks, setCapClicks] = useState(0);
 
 	const defaultLottieOptions = {
 		loop: false,
@@ -62,6 +63,12 @@ export default function Main() {
 							onClick={() => {
 								const cap = document.getElementById('BaseCap');
 								if (cap) {
+									setCapClicks(capClicks + 1);
+									if (capClicks + 1 === 5) {
+										cap.classList.add('animate-spin-cap');
+										setTimeout(() => cap.classList.remove('animate-spin-cap'), 1200);
+										setCapClicks(0);
+									}
 									cap.classList.add('animate-jiggle');
 									setTimeout(() => cap.classList.remove('animate-jiggle'), 1000);
 								}

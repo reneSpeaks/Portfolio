@@ -48,6 +48,7 @@
 	--animate-bounce: bounce 2s infinite;
 	--animate-toast-enter: toast-slide-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 	--animate-toast-leave: toast-slide-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+	--animate-spin-cap: spin-cap 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 
 	@keyframes loading {
 		58%,
@@ -154,6 +155,15 @@
 			transform: translate(1px, -2px) rotate(-1deg);
 		}
 	}
+
+	@keyframes spin-cap {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(365deg);
+	}
+}
 }
 
 @layer components {
