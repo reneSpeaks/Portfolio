@@ -61,7 +61,7 @@ export default function Main() {
 						<motion.svg
 							variants={BaseCap}
 							onClick={() => {
-								const cap = document.getElementById('BaseCap');
+								const cap = document.getElementById('BaseCapHero');
 								if (cap) {
 									setCapClicks(capClicks + 1);
 									if (capClicks + 1 === 5) {
@@ -73,12 +73,12 @@ export default function Main() {
 									setTimeout(() => cap.classList.remove('animate-jiggle'), 1000);
 								}
 							}}
-							id="BaseCap"
+							id="BaseCapHero"
 							xmlns="http://www.w3.org/2000/svg"
 							version="1.1"
 							xmlnsXlink="http://www.w3.org/1999/xlink"
 							viewBox="0 0 160 125.33"
-							className="drop-shadow-dark hover:drop-shadow-accent-100 absolute -top-3 -left-2 z-12 h-8 w-8 transform cursor-pointer drop-shadow-xs sm:-top-4 sm:-left-3 sm:h-12 sm:w-12">
+							className="drop-shadow-dark hover:drop-shadow-accent-100 pointer-events-auto absolute -top-3 -left-2 z-12 h-8 w-8 transform cursor-pointer drop-shadow-xs sm:-top-4 sm:-left-3 sm:h-12 sm:w-12">
 							<defs>
 								<linearGradient
 									id="linear-gradient"
