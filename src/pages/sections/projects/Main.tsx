@@ -26,7 +26,7 @@ export default function Main({ Project }: { Project: Projects[number] }) {
 	}, [projectTheme, setIsThemed]);
 
 	return (
-		<main className="text-theme sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden sm:p-4">
+		<main className="text-theme sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden transition-all duration-500 ease-in-out sm:p-4">
 			<div
 				className={`${pageState === 'About' ? 'opacity-90' : 'opacity-0'} bg-dark absolute inset-0 top-0 right-0 bottom-0 left-0 z-50 duration-300`}
 			/>
