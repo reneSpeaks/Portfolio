@@ -30,17 +30,17 @@ function Loading() {
 	return (
 		<>
 			<section
-				className={`text-light fixed top-0 z-50 flex h-full w-full flex-col justify-center overflow-hidden ${pageState !== 'Intro' ? 'pointer-events-none' : ''}`}>
+				className={`text-light fixed top-0 z-50 flex h-dvh w-full flex-col justify-center overflow-hidden ${pageState !== 'Intro' ? 'pointer-events-none' : ''}`}>
 				<motion.div variants={StaggerItems} initial="initial" animate={pageState !== 'Intro' ? 'animate' : 'initial'} exit="exit">
-					<motion.div variants={Slide} className="bg-dark fixed top-0 left-0 z-57 h-screen w-full" />
-					<motion.div variants={Slide} className="bg-accent-100 fixed top-0 left-0 z-58 h-screen w-full" />
-					<motion.div variants={Slide} className="bg-dark fixed top-0 left-0 z-59 h-screen w-full" />
-					<motion.div variants={Slide} className="bg-accent-100 fixed top-0 left-0 z-58 h-screen w-full" />
+					<motion.div variants={Slide} className="bg-dark fixed top-0 left-0 z-57 h-dvh w-full" />
+					<motion.div variants={Slide} className="bg-accent-100 fixed top-0 left-0 z-58 h-dvh w-full" />
+					<motion.div variants={Slide} className="bg-dark fixed top-0 left-0 z-59 h-dvh w-full" />
+					<motion.div variants={Slide} className="bg-accent-100 fixed top-0 left-0 z-58 h-dvh w-full" />
 				</motion.div>
 
 				{firstLoad.current && showSplash ? (
 					<>
-						<div className="from-dark via-accent-100 animate-rotate-border to-dark absolute top-0 left-0 z-56 h-screen w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
+						<div className="from-dark via-accent-100 animate-rotate-border to-dark absolute top-0 left-0 z-56 h-dvh w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
 							<div className="bg-dark z-57 h-full w-full" />
 						</div>
 						<div className="fixed top-1/2 left-1/2 z-56 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
@@ -120,7 +120,7 @@ function Loading() {
 							initial="initial"
 							animate={pageState === 'Intro' ? 'animate' : 'initial'}
 							exit="exit"
-							className="from-dark animate-rotate-border via-accent-100 to-dark absolute top-0 left-0 z-56 h-screen w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
+							className="from-dark animate-rotate-border via-accent-100 to-dark absolute top-0 left-0 z-56 h-dvh w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
 							<div className="bg-dark z-57 h-full w-full" />
 						</motion.div>
 						<motion.div

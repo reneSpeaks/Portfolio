@@ -7,10 +7,10 @@ export default function Transition({ children }: { children: ReactNode }) {
 	return (
 		<>
 			<motion.div variants={StaggerItems} initial="initial" animate="animate" exit="exit">
-				<motion.div className="bg-theme-primary-100 fixed top-0 left-0 z-57 h-screen w-full" variants={Slide} />
-				<motion.div className="bg-theme-accent-100 fixed top-0 left-0 z-58 h-screen w-full" variants={Slide} />
-				<motion.div className="bg-theme-primary-100 fixed top-0 left-0 z-59 h-screen w-full" variants={Slide} />
-				<motion.div className="bg-theme-accent-100 fixed top-0 left-0 z-58 h-screen w-full" variants={Slide} />
+				<motion.div className="bg-theme-primary-100 fixed top-0 left-0 z-57 h-dvh w-full" variants={Slide} />
+				<motion.div className="bg-theme-accent-100 fixed top-0 left-0 z-58 h-dvh w-full" variants={Slide} />
+				<motion.div className="bg-theme-primary-100 fixed top-0 left-0 z-59 h-dvh w-full" variants={Slide} />
+				<motion.div className="bg-theme-accent-100 fixed top-0 left-0 z-58 h-dvh w-full" variants={Slide} />
 			</motion.div>
 
 			<motion.div
@@ -18,7 +18,7 @@ export default function Transition({ children }: { children: ReactNode }) {
 				initial="initial"
 				animate="animate"
 				exit="exit"
-				className="from-dark animate-rotate-border via-accent-100 to-dark fixed top-0 left-0 z-56 h-screen w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
+				className="from-dark animate-rotate-border via-accent-100 to-dark fixed top-0 left-0 z-56 h-dvh w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
 				<div className="bg-dark pointer-events-none z-57 flex h-full w-full items-center justify-center" />
 			</motion.div>
 			<motion.div variants={Loader} initial="initial" animate="animate" exit="exit" className="z-56">

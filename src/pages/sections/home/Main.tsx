@@ -47,7 +47,7 @@ export default function Main() {
 	}, []);
 
 	return (
-		<main className="text-primary-100 sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden sm:p-4">
+		<main className="text-primary-100 sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden transition-all duration-500 ease-in-out sm:p-4">
 			<section className="relative z-10 m-4 mt-32 flex w-full max-w-7xl items-center justify-center">
 				<motion.div
 					variants={Hero}
