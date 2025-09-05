@@ -18,6 +18,7 @@ export type Projects = {
 	headerType: 'image' | 'video';
 	subheader: string;
 	logo: string;
+	introductionBackground: string;
 	period: string;
 	role: string;
 	context: string;
@@ -45,6 +46,7 @@ export const Projects: Projects = [
 		headerType: 'video',
 		subheader: 'Local Rock, Blues, Soul & Folk music for everyone.',
 		logo: musikLebenLogo,
+		introductionBackground: 'Musik Leben e.V.',
 		period: 'Early 2025',
 		role: 'Full-Stack Web Developer',
 		context: 'Website Redesign',
@@ -98,6 +100,7 @@ export const Projects: Projects = [
 		headerType: 'image',
 		subheader: 'A showcase of my work and projects.',
 		logo: portfolioLogo,
+		introductionBackground: 'René Weiberlenn',
 		period: 'September 2025',
 		role: 'Full-Stack Web Developer',
 		context: 'Skill Showcase',
