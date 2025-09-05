@@ -27,3 +27,9 @@ export const BaseCap: Variants = {
 	visible: { rotate: 365, transition: { type: spring, delay: 3 } },
 	exit: { rotate: 0, transition: { type: spring, delay: 3 } }
 };
+
+export const Arrow: Variants = {
+	hidden: { opacity: 0, y: 20, transition: { duration: 0.3 } },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+	exit: { opacity: 0, y: 20, transition: { duration: 0.3 } }
+};

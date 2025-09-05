@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { animate, motion, useMotionValue } from 'framer-motion';
 
-import { usePageState } from '@hooks/usePageState';
 import { useDotCount } from '@hooks/useDotCount';
 import { useMobile } from '@hooks/useMobile';
 
@@ -12,7 +11,6 @@ import ProfilePicture from '@assets/layout/Event.png';
 
 export default function About() {
 	const { isMobile } = useMobile();
-	const { pageState } = usePageState();
 	const dotCount = useDotCount();
 	const yTranslation = useMotionValue(0);
 	const duration: Duration = { Fast: 35, Slow: 80 };
@@ -48,9 +46,7 @@ export default function About() {
 	}, [yTranslation, currentDuration, rerender, mustFinish]);
 
 	return (
-		<section
-			id="about"
-			className={`${pageState !== 'Default' ? 'invisible hidden' : 'visible flex'} bg-theme-primary-100 relative z-20 flex h-auto w-full items-center justify-center py-20`}>
+		<section id="about" className="bg-theme-primary-100 relative z-20 flex h-auto w-full items-center justify-center py-20">
 			<div className="bg-light shadow-dark relative z-21 flex h-11/12 w-11/12 max-w-7xl flex-col shadow-lg md:grid md:grid-cols-2 md:grid-rows-1">
 				<div className="md:from-light relative flex h-full w-full flex-col justify-center gap-10 py-[15%] pl-[15%] md:col-start-1 md:bg-gradient-to-r md:from-80% md:to-[#AAAAAA] md:to-100%">
 					<div className="flex flex-col gap-4 pr-[10%]">

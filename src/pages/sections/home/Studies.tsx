@@ -2,16 +2,11 @@ import { NavLink } from 'react-router';
 
 import Button from '@components/Button';
 
-import { usePageState } from '@hooks/usePageState';
-
 import { Projects } from '@config/projects/Projects';
 
 export default function Studies() {
-	const { pageState } = usePageState();
-
 	return (
-		<section
-			className={`${pageState !== 'Default' ? 'invisible hidden' : 'visible flex'} bg-light relative z-20 flex h-auto w-full flex-col items-center justify-center py-20`}>
+		<section className="bg-light relative z-20 flex h-auto w-full flex-col items-center justify-center py-20">
 			<div className="mb-30 flex flex-col items-center gap-4">
 				<h4 className="text-accent-100 font-serif text-xl font-semibold">SHOWCASE</h4>
 				<h2 className="text-theme text-4xl font-bold">Latest Works</h2>

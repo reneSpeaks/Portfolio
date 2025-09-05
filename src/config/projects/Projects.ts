@@ -1,18 +1,21 @@
-import musikLebenHeader from '@assets/projects/video/musiklebenintro.mp4';
+import musikLebenHeader from '@assets/projects/header/musiklebenintro.mp4';
 import musikLebenLogo from '@assets/projects/logo/Musikleben_Logo_uni.png';
-import musikLebenMockUp from '@assets/projects/layouts/MusikLeben.png';
-import musikLebenThumbnail from '@assets/projects/video/MusikLeben.png';
+import musikLebenMockUp from '@assets/projects/mockups/MusikLeben.png';
+import musikLebenThumbnail from '@assets/projects/thumbnails/MusikLeben.png';
 import musikLebenDescription from '@config/projects/descriptions/ml_introduction.md?raw';
 import musikLebenInsights from '@config/projects/descriptions/ml_insights.md?raw';
 
+import portfolioHeader from '@assets/projects/header/Portfolio_Header.png';
 import portfolioLogo from '@assets/layout/logo/R_Primary.svg';
 import portfolioDescription from '@config/projects/descriptions/portfolio_introduction.md?raw';
 import portfolioInsights from '@config/projects/descriptions/portfolio_insights.md?raw';
-import portfolioThumbnail from '@assets/projects/video/Portfolio.png';
+import portfolioThumbnail from '@assets/projects/thumbnails/Portfolio.png';
 
 export type Projects = {
 	id: number;
 	name: string;
+	font: string;
+	headerType: 'image' | 'video';
 	subheader: string;
 	logo: string;
 	period: string;
@@ -38,6 +41,8 @@ export const Projects: Projects = [
 	{
 		id: 0,
 		name: 'Musik Leben e.V.',
+		font: 'Poppins',
+		headerType: 'video',
 		subheader: 'Local Rock, Blues, Soul & Folk music for everyone.',
 		logo: musikLebenLogo,
 		period: 'Early 2025',
@@ -89,6 +94,8 @@ export const Projects: Projects = [
 	{
 		id: 1,
 		name: 'Portfolio Website',
+		font: 'League Spartan',
+		headerType: 'image',
 		subheader: 'A showcase of my work and projects.',
 		logo: portfolioLogo,
 		period: 'September 2025',
@@ -98,7 +105,7 @@ export const Projects: Projects = [
 		insights: portfolioInsights,
 		technologies: ['React.js', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'Framer Motion'],
 		demo: 'https://www.weiberlenn.name',
-		// header: portfolioHeader,
+		header: portfolioHeader,
 		// mockup: portfolioMockUp,
 		thumbnail: portfolioThumbnail,
 		theme: {

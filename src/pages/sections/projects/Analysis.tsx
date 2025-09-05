@@ -1,17 +1,14 @@
 import ReactMarkdown from 'react-markdown';
 
-import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
 export default function Analysis({ id }: { id: number }) {
-	const { pageState } = usePageState();
 	const { Projects } = useProject();
 
 	const Project = Projects[id];
 
 	return (
-		<section
-			className={`${pageState !== 'Default' ? 'invisible hidden' : 'visible flex'} relative z-20 flex h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-[#F6F6F6] py-15`}>
+		<section className="relative z-20 flex h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-[#F6F6F6] py-15">
 			<h5 className="text-theme text-5xl font-bold">Analysis & Insights</h5>
 			<div className="flex flex-col items-center justify-center lg:flex-row lg:gap-10">
 				<div className="z-11 flex max-w-3xl flex-col gap-4 p-6">

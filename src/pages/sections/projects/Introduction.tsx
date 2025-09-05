@@ -1,20 +1,17 @@
 import { Link } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 
-import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
 import Button from '@components/Button';
 
 export default function Introduction({ id }: { id: number }) {
 	const { Projects } = useProject();
-	const { pageState } = usePageState();
 
 	const Project = Projects[id];
 
 	return (
-		<section
-			className={`${pageState !== 'Default' ? 'invisible hidden' : 'visible flex'} bg-theme relative z-20 flex h-auto w-full flex-col items-center justify-center gap-4 overflow-hidden border-b-1 border-b-[#999999] py-24`}>
+		<section className="bg-theme relative z-20 flex h-auto w-full flex-col items-center justify-center gap-4 overflow-hidden border-b-1 border-b-[#999999] py-24">
 			<h1 className="text-4xl font-bold md:text-5xl">Introduction</h1>
 			<span className="max-w-6xl p-5 text-justify text-lg">
 				<ReactMarkdown>{Project.description}</ReactMarkdown>

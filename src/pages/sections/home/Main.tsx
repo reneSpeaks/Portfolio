@@ -9,7 +9,7 @@ import { usePageState } from '@hooks/usePageState';
 import { type PageState } from '@config/Page';
 import { BusinessLinks } from '@config/Business';
 import { Quotes as Citation, type Quotes } from '@config/Quotes';
-import { Hero, SideNav, BaseCap, Quote } from '@config/main/Animations';
+import { Hero, SideNav, BaseCap, Quote, Arrow } from '@config/main/Animations';
 
 import arrowData from '@assets/layout/animation/lotties/arrow-down.json';
 import background from '@assets/layout/Home_BG_Mateusz_Dach.jpg';
@@ -214,7 +214,11 @@ export default function Main() {
 					{quote?.text} <br />— <cite>{quote?.author}</cite>
 				</motion.blockquote>
 
-				<div
+				<motion.div
+					variants={Arrow}
+					initial="hidden"
+					animate={pageState === 'Default' ? 'visible' : 'hidden'}
+					exit="exit"
 					className="pointer-events-auto absolute bottom-0 left-1/2 h-10 w-10 -translate-x-1/2 cursor-pointer"
 					onClick={() => {
 						const nextSection = document.getElementById('about');
@@ -223,7 +227,7 @@ export default function Main() {
 						}
 					}}>
 					<Lottie options={arrowLottieOptions} height={40} width={40} />
-				</div>
+				</motion.div>
 			</section>
 
 			<img
