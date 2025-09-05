@@ -17,7 +17,7 @@ export default function Introduction({ id }: { id: number }) {
 				<ReactMarkdown>{Project.description}</ReactMarkdown>
 			</span>
 			<Link to={Project.demo} target="_blank" className="z-12 mt-8 w-fit">
-				<Button>Visit Website</Button>
+				<Button mode="light">Visit Website</Button>
 			</Link>
 			<div className="absolute -bottom-0 left-1/3 overflow-hidden opacity-20 md:left-1/2">
 				<img src={Project.logo} alt={Project.name} className="pointer-events-none w-170 min-w-120" />
