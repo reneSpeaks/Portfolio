@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
 
 import { useTheme } from '@hooks/useTheme';
 import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
-export default function Main() {
-	const { projectId } = useParams();
+export default function Main({ id }: { id: number }) {
 	const { Projects } = useProject();
 	const { pageState } = usePageState();
 	const { setIsThemed } = useTheme();
-	const Project = Projects[projectId ? parseInt(projectId) : 0];
+	const Project = Projects[id];
 
 	useEffect(() => {
 		// Set variables on body

@@ -1,15 +1,13 @@
 import ReactMarkdown from 'react-markdown';
-import { useParams } from 'react-router';
 
 import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
-export default function Analysis() {
-	const { projectId } = useParams();
+export default function Analysis({ id }: { id: number }) {
 	const { pageState } = usePageState();
 	const { Projects } = useProject();
 
-	const Project = Projects[projectId ? parseInt(projectId) : 0];
+	const Project = Projects[id];
 
 	return (
 		<section

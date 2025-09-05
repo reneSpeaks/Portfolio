@@ -38,10 +38,9 @@ function App() {
 								<AnimatePresence mode="wait">
 									<Routes location={location} key={location.pathname}>
 										<Route index element={<Home />} />
-										<Route path="/projects">
-											<Route path=":projectId" element={<Projects />} />
-										</Route>
+										<Route path="/projects/:projectId" element={<Projects />} />
 										<Route path="/imprint" element={<Imprint />} />
+										<Route path="*" element={<Home />} />
 									</Routes>
 								</AnimatePresence>
 								<Toaster position="bottom-right" reverseOrder={false} />

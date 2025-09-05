@@ -1,6 +1,6 @@
 import Lottie from 'react-lottie';
-import { useState } from 'react';
-import { NavLink, useParams } from 'react-router';
+import { useEffect, useState } from 'react';
+import { NavLink, useNavigate, useParams } from 'react-router';
 
 import Main from '@pages/sections/projects/Main';
 import Introduction from '@pages/sections/projects/Introduction';
@@ -19,8 +19,17 @@ export default function Projects() {
 	const { pageState } = usePageState();
 	const { projectId } = useParams();
 	const { Projects } = useProject();
+	const navigate = useNavigate();
 	const [isStopped, setIsStopped] = useState(true);
-	const Project = Projects[projectId ? parseInt(projectId) : 0];
+	const [Project, setProject] = useState(Projects[0]);
+
+	useEffect(() => {
+		if (parseInt(projectId ?? '0') >= Projects.length || !projectId) {
+			void navigate('/projects/0', { replace: true });
+			return;
+		}
+		setProject(Projects[parseInt(projectId ?? '0')]);
+	}, [projectId, Projects, navigate]);
 
 	const chevronLottieOptions = {
 		loop: false,
@@ -34,11 +43,11 @@ export default function Projects() {
 
 	return (
 		<Transition>
-			<Main />
+			<Main id={Project.id} />
 			<Contact />
-			<Introduction />
-			<Analysis />
-			<Theme />
+			<Introduction id={Project.id} />
+			<Analysis id={Project.id} />
+			<Theme id={Project.id} />
 			<NavLink
 				to={`/projects/${Project.id + 1 < Projects.length ? Project.id + 1 : 0}`}
 				onMouseLeave={() => setIsStopped(true)}

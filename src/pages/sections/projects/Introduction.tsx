@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router';
+import { Link } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 
 import { usePageState } from '@hooks/usePageState';
@@ -6,12 +6,11 @@ import { useProject } from '@hooks/useProject';
 
 import Button from '@components/Button';
 
-export default function Introduction() {
-	const { projectId } = useParams();
+export default function Introduction({ id }: { id: number }) {
 	const { Projects } = useProject();
 	const { pageState } = usePageState();
 
-	const Project = Projects[projectId ? parseInt(projectId) : 0];
+	const Project = Projects[id];
 
 	return (
 		<section

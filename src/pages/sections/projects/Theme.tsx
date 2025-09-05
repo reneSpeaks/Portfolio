@@ -1,5 +1,3 @@
-import { useParams } from 'react-router';
-
 import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
@@ -7,11 +5,10 @@ import type { PageState } from '@config/Page';
 
 import Button from '@components/Button';
 
-export default function Theme() {
-	const { projectId } = useParams();
+export default function Theme({ id }: { id: number }) {
 	const { pageState, setPageState } = usePageState();
 	const { Projects } = useProject();
-	const Project = Projects[projectId ? parseInt(projectId) : 0];
+	const Project = Projects[id];
 
 	return (
 		<section
