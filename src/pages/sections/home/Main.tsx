@@ -45,7 +45,7 @@ export default function Main() {
 					animate={pageState === 'Default' ? 'visible' : 'hidden'}
 					exit="exit"
 					className="flex h-8/10 w-8/10 max-w-6xl flex-col justify-center gap-2">
-					<h1 className="relative z-12 text-5xl font-black tracking-tight sm:text-7xl">
+					<h1 className="relative z-12 text-5xl font-semibold tracking-tight sm:text-7xl">
 						René Weiberlenn
 						{/* BaseCap */}
 						<motion.svg
@@ -106,7 +106,7 @@ export default function Main() {
 							/>
 						</motion.svg>
 					</h1>
-					<h3 className="z-12 text-lg italic sm:text-xl">Passionate Web Developer</h3>
+					<h3 className="z-12 font-serif italic sm:text-lg">Passionate Web Developer</h3>
 
 					<Button className="mt-8 w-fit" onClick={() => setPageState('About' as PageState)}>
 						About Me

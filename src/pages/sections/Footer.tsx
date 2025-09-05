@@ -28,7 +28,7 @@ export default function Footer() {
 			</header>
 
 			<nav className="mt-10 flex w-full max-w-7xl justify-center">
-				<ul className="menu flex flex-row gap-5 text-lg font-bold md:text-2xl">
+				<ul className="menu flex flex-row gap-5 text-lg font-semibold md:text-2xl">
 					{Navigation.map((item, index) => (
 						<li key={index}>
 							<NavLink to={item.path} className="hover:text-theme-accent-200 cursor-pointer duration-300">

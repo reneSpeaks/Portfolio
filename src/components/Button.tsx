@@ -22,7 +22,7 @@ export default function Button({ onClick, className, children }: { onClick?: () 
 			onMouseLeave={() => setIsStopped(true)}
 			onMouseEnter={() => setIsStopped(false)}
 			className={`${className} group shadow-dark pointer-events-auto relative cursor-pointer px-7 py-3 shadow-md`}>
-			<span className="text-light text-xl font-black tracking-widest">{children}</span>
+			<span className="text-light text-xl font-bold tracking-widest">{children}</span>
 			<div className="absolute top-1/2 -right-12 -translate-y-1/2">
 				<Lottie options={chevronLottieOptions} height={40} width={40} isStopped={isStopped} />
 			</div>

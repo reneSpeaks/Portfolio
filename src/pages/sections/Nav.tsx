@@ -220,7 +220,7 @@ export default function Nav() {
 					</NavLink>
 				</span>
 
-				<ul className={isMobile ? 'hidden' : 'menu flex w-full max-w-7xl flex-row justify-end gap-10 p-7 text-2xl font-black'}>
+				<ul className={isMobile ? 'hidden' : 'menu flex w-full max-w-7xl flex-row justify-end gap-10 p-7 text-2xl font-bold'}>
 					{Navigation.map((item, index) => (
 						<li key={index} className="relative">
 							<NavLink

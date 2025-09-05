@@ -15,15 +15,15 @@ export default function Studies() {
 		<section
 			className={`${pageState !== 'Default' ? 'invisible hidden' : 'visible flex'} bg-light relative z-20 flex h-auto w-full flex-col items-center justify-center py-20`}>
 			<div className="mb-30 flex flex-col items-center gap-4">
-				<h4 className="text-accent-100 font-serif text-xl font-bold">A showcase of my recent projects</h4>
-				<h2 className="text-theme text-4xl font-[1000]">Latest Works</h2>
+				<h4 className="text-accent-100 font-serif text-xl font-semibold">SHOWCASE</h4>
+				<h2 className="text-theme text-4xl font-bold">Latest Works</h2>
 			</div>
 			{Projects.map((project, index) => (
 				<div
 					key={index}
-					className={`${index % 2 === 0 ? 'left-1/18' : 'right-1/18'} shadow-primary-100 hover:shadow-accent-100 pointer-events-auto relative z-0 mb-40 flex h-126 w-full max-w-4xl flex-col justify-end gap-2 overflow-hidden border-1 pb-20 pl-20 shadow-2xl duration-300`}>
+					className={`${index % 2 === 0 ? 'left-1/18 items-start pl-20' : 'right-1/18 items-end pr-20'} shadow-primary-100 hover:shadow-accent-100 pointer-events-auto relative z-0 mb-40 flex h-126 w-full max-w-4xl flex-col justify-end gap-2 overflow-hidden border-1 pb-5 shadow-2xl duration-300`}>
 					<img src={project.thumbnail} alt={project.name} className="absolute inset-0 h-auto w-full object-cover" />
-					<h3 className="text-light drop-shadow-primary-100 z-11 text-5xl font-[1000] drop-shadow-lg">{project.name}</h3>
+					<h3 className="text-light drop-shadow-primary-100 z-11 text-5xl font-bold drop-shadow-lg">{project.name}</h3>
 					<p className={`text-light drop-shadow-primary-100 z-11 font-serif text-lg italic drop-shadow-lg`}>
 						{project.subheader}
 					</p>
@@ -36,7 +36,7 @@ export default function Studies() {
 						}}>
 						<Button className="z-12 mt-4 w-fit">View Project</Button>
 					</NavLink>
-					<div className="absolute bottom-5 left-10 flex flex-row gap-5">
+					<div className="bottom-5 left-10 mt-10 flex flex-row gap-5">
 						{project.technologies.map((tech, index) => (
 							<span key={index} className="text-light drop-shadow-primary-100 z-11 font-serif text-lg italic drop-shadow-lg">
 								{tech}
