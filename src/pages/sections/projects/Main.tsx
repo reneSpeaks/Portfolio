@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 
 import { useTheme } from '@hooks/useTheme';
 import { usePageState } from '@hooks/usePageState';
+import { useProject } from '@hooks/useProject';
 
-import type { Projects } from '@config/projects/Projects';
-
-export default function Main({ Project }: { Project: Projects[number] }) {
+export default function Main() {
+	const { ProjectData } = useProject();
 	const { pageState } = usePageState();
-	const projectTheme = Project.theme;
 	const { setIsThemed } = useTheme();
+	const projectTheme = ProjectData.theme;
 
 	useEffect(() => {
 		// Set variables on body
@@ -32,22 +32,22 @@ export default function Main({ Project }: { Project: Projects[number] }) {
 			/>
 			<div className="absolute inset-0">
 				<video autoPlay loop muted playsInline className="pointer-events-none z-11 h-screen w-full overflow-hidden object-cover">
-					<source src={Project.header} type="video/mp4" />
+					<source src={ProjectData.header} type="video/mp4" />
 				</video>
 			</div>
 			<div className="z-12 flex h-full w-full flex-col items-center justify-center p-4 text-center">
-				<h1 className="text-theme-header text-5xl font-black sm:text-7xl">{Project.name}</h1>
-				<p className="font-serif text-2xl italic">{Project.subheader}</p>
+				<h1 className="text-theme-header text-5xl font-black sm:text-7xl">{ProjectData.name}</h1>
+				<p className="font-serif text-2xl italic">{ProjectData.subheader}</p>
 			</div>
 			<div className="absolute bottom-4 z-12 flex w-screen flex-col items-center justify-center md:flex-row md:gap-10">
 				<p className="text-theme-header text-lg font-black capitalize" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-black">Role</span>&nbsp;{Project.role}
+					<span className="text-theme font-black">Role</span>&nbsp;{ProjectData.role}
 				</p>
 				<p className="text-theme-header text-lg font-black capitalize" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-black">Context</span>&nbsp;{Project.context}
+					<span className="text-theme font-black">Context</span>&nbsp;{ProjectData.context}
 				</p>
 				<p className="text-theme-header text-lg font-black capitalize" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-black">Period</span>&nbsp;{Project.period}
+					<span className="text-theme font-black">Period</span>&nbsp;{ProjectData.period}
 				</p>
 			</div>
 			<div className="from-theme-primary-100 to-theme-accent-100 absolute bottom-0 z-11 h-1 w-full bg-gradient-to-l"></div>

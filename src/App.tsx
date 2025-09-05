@@ -17,6 +17,7 @@ import { PageStateProvider } from '@context/PageStateContext';
 import { ThemeProvider } from '@context/ThemeContext';
 
 import { Toaster } from 'react-hot-toast';
+import { ProjectProvider } from '@context/ProjectContext';
 
 function App() {
 	const location = useLocation();
@@ -30,19 +31,21 @@ function App() {
 			<PageStateProvider>
 				<MobileProvider>
 					<ThemeProvider>
-						<Loading />
-						<PageWrapper>
-							<Nav />
-							<AnimatePresence mode="wait">
-								<Routes location={location} key={location.pathname}>
-									<Route index element={<Home />} />
-									<Route path="/projects" element={<Projects />} />
-									<Route path="/imprint" element={<Imprint />} />
-								</Routes>
-							</AnimatePresence>
-							<Toaster position="bottom-right" reverseOrder={false} />
-						</PageWrapper>
-						<Footer />
+						<ProjectProvider>
+							<Loading />
+							<PageWrapper>
+								<Nav />
+								<AnimatePresence mode="wait">
+									<Routes location={location} key={location.pathname}>
+										<Route index element={<Home />} />
+										<Route path="/projects" element={<Projects />} />
+										<Route path="/imprint" element={<Imprint />} />
+									</Routes>
+								</AnimatePresence>
+								<Toaster position="bottom-right" reverseOrder={false} />
+							</PageWrapper>
+							<Footer />
+						</ProjectProvider>
 					</ThemeProvider>
 				</MobileProvider>
 			</PageStateProvider>

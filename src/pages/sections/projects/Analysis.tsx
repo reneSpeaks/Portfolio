@@ -1,11 +1,11 @@
 import ReactMarkdown from 'react-markdown';
 
 import { usePageState } from '@hooks/usePageState';
+import { useProject } from '@hooks/useProject';
 
-import type { Projects } from '@config/projects/Projects';
-
-export default function Analysis({ Project }: { Project: Projects[number] }) {
+export default function Analysis() {
 	const { pageState } = usePageState();
+	const { ProjectData } = useProject();
 
 	return (
 		<section
@@ -23,11 +23,11 @@ export default function Analysis({ Project }: { Project: Projects[number] }) {
 							),
 							strong: ({ children }) => <strong className="text-theme">{children}</strong>
 						}}>
-						{Project.insights}
+						{ProjectData.insights}
 					</ReactMarkdown>
 				</div>
 				<div className="z-11">
-					<img src={Project.mockup} alt="" className="drop-shadow-theme p-5 drop-shadow-sm lg:max-w-150" />
+					<img src={ProjectData.mockup} alt="" className="drop-shadow-theme p-5 drop-shadow-sm lg:max-w-150" />
 				</div>
 			</div>
 			<div className="border-dark absolute z-10 h-full w-[80%] max-w-6xl border-x-1 opacity-10"></div>

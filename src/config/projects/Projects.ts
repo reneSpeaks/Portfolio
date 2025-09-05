@@ -11,6 +11,7 @@ import portfolioInsights from '@config/projects/descriptions/portfolio_insights.
 import portfolioThumbnail from '@assets/projects/video/Portfolio.png';
 
 export type Projects = {
+	id: number;
 	name: string;
 	subheader: string;
 	logo: string;
@@ -35,6 +36,7 @@ export type Projects = {
 
 export const Projects: Projects = [
 	{
+		id: 0,
 		name: 'Musik Leben e.V.',
 		subheader: 'Local Rock, Blues, Soul & Folk music for everyone.',
 		logo: musikLebenLogo,
@@ -85,6 +87,7 @@ export const Projects: Projects = [
 		]
 	},
 	{
+		id: 1,
 		name: 'Portfolio Website',
 		subheader: 'A showcase of my work and projects.',
 		logo: portfolioLogo,

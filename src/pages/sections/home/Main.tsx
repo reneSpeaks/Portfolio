@@ -11,25 +11,15 @@ import { BusinessLinks } from '@config/Business';
 import { Quotes as Citation, type Quotes } from '@config/Quotes';
 import { Hero, SideNav, BaseCap, Quote } from '@config/main/Animations';
 
-import chevronData from '@assets/layout/animation/lotties/chevron-right.json';
 import arrowData from '@assets/layout/animation/lotties/arrow-down.json';
 import background from '@assets/layout/Home_BG_Mateusz_Dach.jpg';
+
+import Button from '@components/Button';
 
 export default function Main() {
 	const { pageState, setPageState } = usePageState();
 	const [quote, setQuote] = useState<Quotes | null>(null);
-	const [isStopped, setIsStopped] = useState(true);
 	const [capClicks, setCapClicks] = useState(0);
-
-	const defaultLottieOptions = {
-		loop: false,
-		autoplay: true,
-		animationData: chevronData,
-		rendererSettings: {
-			fps: 60,
-			preserveAspectRatio: 'xMidYMid slice'
-		}
-	};
 
 	const arrowLottieOptions = {
 		loop: true,
@@ -117,17 +107,10 @@ export default function Main() {
 						</motion.svg>
 					</h1>
 					<h3 className="z-12 text-lg italic sm:text-xl">Passionate Web Developer</h3>
-					<button
-						onClick={() => setPageState('About' as PageState)}
-						onMouseEnter={() => setIsStopped(false)}
-						onMouseLeave={() => setIsStopped(true)}
-						className="group button bg-primary-100 text-light hover:bg-primary-300 shadow-primary-100 relative z-12 mt-8 w-fit cursor-pointer px-8 py-3 text-lg font-bold tracking-widest shadow-md duration-300 ease-in-out">
-						<span className="z-12">About Me</span>
-						<div className="absolute top-1/2 left-40 -translate-y-1/2 cursor-pointer">
-							<Lottie options={defaultLottieOptions} height={40} width={40} isStopped={isStopped} />
-						</div>
-						<div className="button-mask"></div>
-					</button>
+
+					<Button className="mt-8 w-fit" onClick={() => setPageState('About' as PageState)}>
+						About Me
+					</Button>
 
 					{/* Logo */}
 					<svg

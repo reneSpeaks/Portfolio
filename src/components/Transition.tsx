@@ -18,10 +18,10 @@ export default function Transition({ children }: { children: ReactNode }) {
 				initial="initial"
 				animate="animate"
 				exit="exit"
-				className="from-dark animate-rotate-border via-accent-100 to-dark fixed top-0 left-0 z-56 h-dvh w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
+				className="from-dark animate-rotate-border via-accent-100 to-dark pointer-events-none fixed top-0 left-0 z-56 h-dvh w-full bg-conic/[from_var(--border-angle)] from-80% via-90% to-100% p-2">
 				<div className="bg-dark pointer-events-none z-57 flex h-full w-full items-center justify-center" />
 			</motion.div>
-			<motion.div variants={Loader} initial="initial" animate="animate" exit="exit" className="z-56">
+			<motion.div variants={Loader} initial="initial" animate="animate" exit="exit" className="pointer-events-none z-56">
 				<div className="ambience animate-glow-pulse"></div>
 				<svg
 					id="BaseCap"
