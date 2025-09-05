@@ -1,29 +1,36 @@
 import { useEffect } from 'react';
+import { useParams } from 'react-router';
 
 import { useTheme } from '@hooks/useTheme';
 import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
 export default function Main() {
-	const { ProjectData } = useProject();
+	const { projectId } = useParams();
+	const { Projects } = useProject();
 	const { pageState } = usePageState();
 	const { setIsThemed } = useTheme();
-	const projectTheme = ProjectData.theme;
+	const Project = Projects[projectId ? parseInt(projectId) : 0];
 
 	useEffect(() => {
 		// Set variables on body
-		Object.entries(projectTheme).forEach(([key, value]) => {
+		Object.entries(Project.theme).forEach(([key, value]) => {
 			document.body.style.setProperty(key, value);
 		});
+		document.body.style.setProperty(
+			'--color-theme-next-accent',
+			Projects[Project.id + 1 < Projects.length ? Project.id + 1 : 0].theme['--color-theme-accent-100']
+		);
 		setIsThemed(1);
 		// Optionally clean up/reset on unmount
 		return () => {
-			Object.keys(projectTheme).forEach((key) => {
+			Object.keys(Project.theme).forEach((key) => {
 				document.body.style.removeProperty(key);
 			});
+			document.body.style.removeProperty('--color-theme-next-accent');
 			setIsThemed(0);
 		};
-	}, [projectTheme, setIsThemed]);
+	}, [Project, Projects, setIsThemed]);
 
 	return (
 		<main className="text-theme sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden transition-all duration-500 ease-in-out sm:p-4">
@@ -32,22 +39,22 @@ export default function Main() {
 			/>
 			<div className="absolute inset-0">
 				<video autoPlay loop muted playsInline className="pointer-events-none z-11 h-screen w-full overflow-hidden object-cover">
-					<source src={ProjectData.header} type="video/mp4" />
+					<source src={Project.header} type="video/mp4" />
 				</video>
 			</div>
 			<div className="z-12 flex h-full w-full flex-col items-center justify-center p-4 text-center">
-				<h1 className="text-theme-header text-5xl font-bold sm:text-7xl">{ProjectData.name}</h1>
-				<p className="font-serif text-2xl italic">{ProjectData.subheader}</p>
+				<h1 className="text-theme-header text-5xl font-bold sm:text-7xl">{Project.name}</h1>
+				<p className="font-serif text-2xl italic">{Project.subheader}</p>
 			</div>
 			<div className="absolute bottom-4 z-12 flex w-screen flex-col items-center justify-center md:flex-row md:gap-10">
 				<p className="text-theme-header text-lg font-bold" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-bold">Role</span>&nbsp;{ProjectData.role}
+					<span className="text-theme font-bold">Role</span>&nbsp;{Project.role}
 				</p>
 				<p className="text-theme-header text-lg font-bold" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-bold">Context</span>&nbsp;{ProjectData.context}
+					<span className="text-theme font-bold">Context</span>&nbsp;{Project.context}
 				</p>
 				<p className="text-theme-header text-lg font-bold" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-bold">Period</span>&nbsp;{ProjectData.period}
+					<span className="text-theme font-bold">Period</span>&nbsp;{Project.period}
 				</p>
 			</div>
 			<div className="from-theme-primary-100 to-theme-accent-100 absolute bottom-0 z-11 h-1 w-full bg-gradient-to-l"></div>

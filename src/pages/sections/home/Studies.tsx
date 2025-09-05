@@ -3,13 +3,11 @@ import { NavLink } from 'react-router';
 import Button from '@components/Button';
 
 import { usePageState } from '@hooks/usePageState';
-import { useProject } from '@hooks/useProject';
 
 import { Projects } from '@config/projects/Projects';
 
 export default function Studies() {
 	const { pageState } = usePageState();
-	const { setProject } = useProject();
 
 	return (
 		<section
@@ -27,13 +25,7 @@ export default function Studies() {
 					<p className={`text-light drop-shadow-primary-100 z-11 font-serif text-lg italic drop-shadow-lg`}>
 						{project.subheader}
 					</p>
-					<NavLink
-						to="/projects"
-						onClick={() => {
-							setProject(index);
-							console.log(index);
-							console.log(Projects[index]);
-						}}>
+					<NavLink to={`/projects/${index}`}>
 						<Button className="z-12 mt-4 w-fit">View Project</Button>
 					</NavLink>
 					<div className="bottom-5 left-10 mt-10 flex flex-row gap-5">

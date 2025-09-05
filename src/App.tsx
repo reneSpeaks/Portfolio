@@ -38,7 +38,9 @@ function App() {
 								<AnimatePresence mode="wait">
 									<Routes location={location} key={location.pathname}>
 										<Route index element={<Home />} />
-										<Route path="/projects" element={<Projects />} />
+										<Route path="/projects">
+											<Route path=":projectId" element={<Projects />} />
+										</Route>
 										<Route path="/imprint" element={<Imprint />} />
 									</Routes>
 								</AnimatePresence>
