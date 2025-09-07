@@ -113,6 +113,19 @@ export default function Nav() {
 								Contact
 							</span>
 						</motion.li>
+						<motion.li variants={Item} className="group relative">
+							<a
+								className="hover:text-theme-primary-300 text-light cursor-pointer text-3xl duration-300 group-hover:pl-5 group-hover:font-bold"
+								onClick={() => {
+									setIsOpen(false);
+									setPageState('Works');
+								}}>
+								Works
+							</a>
+							<span className="text-light pointer-events-none absolute top-2 left-0 text-3xl opacity-0 duration-300 group-hover:opacity-100">
+								Works
+							</span>
+						</motion.li>
 						<motion.div
 							variants={Divider}
 							className="from-theme-primary-300 to-theme-accent-200 shadow-theme-accent-100 h-0.5 w-11/12 bg-gradient-to-r opacity-0 shadow-lg"></motion.div>
@@ -234,6 +247,13 @@ export default function Nav() {
 							</NavLink>
 						</li>
 					))}
+					<li>
+						<a
+							className="text-navigation hover:text-theme-accent-200 relative z-52 cursor-pointer duration-300"
+							onClick={() => setPageState('Works')}>
+							Works
+						</a>
+					</li>
 					<li>
 						<a
 							className="text-navigation hover:text-theme-accent-200 relative z-52 cursor-pointer duration-300"

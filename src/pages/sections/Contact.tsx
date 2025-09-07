@@ -7,7 +7,7 @@ import CloseButton from '@components/CloseButton';
 
 import { usePageState } from '@hooks/usePageState';
 
-import { LetsTalk, About, Shadow } from '@config/contact/Animations';
+import { LetsTalk, About, Shadow, Backdrop } from '@config/contact/Animations';
 import { type PageState } from '@config/Page';
 import { type Inputs } from '@config/contact/Types';
 import { useEffect } from 'react';
@@ -48,20 +48,29 @@ export default function Contact() {
 	};
 
 	useEffect(() => {
-		if (pageState === 'About') {
-			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-			document.body.style.overflow = 'hidden';
+		if (pageState === 'Works') {
+			document.body.classList.add('no-scroll');
+		} else if (pageState === 'About') {
+			document.body.classList.add('no-scroll');
 		} else {
-			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-			document.body.style.overflow = 'auto';
+			document.body.classList.remove('no-scroll');
 		}
+
+		return () => {
+			document.body.classList.remove('no-scroll');
+		};
 	}, [pageState]);
 
 	return (
 		<>
-			<div
-				className={`${pageState === 'About' ? 'bg-dark' : 'bg-transparent'} pointer-events-none fixed top-0 left-0 z-50 h-screen w-screen opacity-75 duration-500`}
+			<motion.div
+				initial="hidden"
+				animate={pageState === 'About' ? 'visible' : 'hidden'}
+				exit="hidden"
+				variants={Backdrop}
+				className="bg-dark fixed top-0 left-0 z-50 h-screen w-screen opacity-75 duration-500"
 			/>
+
 			<motion.section
 				variants={Shadow}
 				initial="hidden"
@@ -90,7 +99,7 @@ export default function Contact() {
 							<input
 								type="text"
 								id="name"
-								className="border-theme-accent-100 focus:border-theme-accent-200 border-b-2 px-2 focus-visible:outline-none"
+								className="border-theme-primary-300 focus:border-theme-accent-200 valid:border-theme-accent-200 border-b-2 px-2 transition-colors duration-300 focus-visible:outline-none"
 								required
 								{...register('name', { required: true })}
 							/>
@@ -98,14 +107,14 @@ export default function Contact() {
 							<input
 								type="email"
 								id="email"
-								className="border-theme-accent-100 focus:border-theme-accent-200 border-b-2 px-2 focus-visible:outline-none"
+								className="border-theme-primary-300 focus:border-theme-accent-200 valid:border-theme-accent-200 border-b-2 px-2 focus-visible:outline-none"
 								required
 								{...register('email', { required: true })}
 							/>
 							<label htmlFor="message">Message *</label>
 							<textarea
 								id="message"
-								className="border-theme-accent-100 focus:border-theme-accent-200 min-h-25 border-b-2 px-2 focus-visible:outline-none"
+								className="border-theme-primary-300 focus:border-theme-accent-200 valid:border-theme-accent-200 min-h-25 border-b-2 px-2 focus-visible:outline-none"
 								required
 								{...register('message', { required: true })}
 							/>
@@ -130,7 +139,7 @@ export default function Contact() {
 					<div className="flex w-7/10 flex-col">
 						<h3 className="text-3xl font-extrabold">About Me.</h3>
 						<span className="text-md mt-1">
-							<i>Interactive Full Stack Web Developer</i>
+							<i>Passionate Web Developer</i>
 						</span>
 						<p className="mt-5 text-justify">
 							I'm René Weiberlenn, a German <strong className="text-theme-accent-100">Full Stack Web Developer</strong>. I'm a
@@ -146,7 +155,7 @@ export default function Contact() {
 							to enjoy. And, I'm <strong className="text-theme-accent-100">for hire</strong> :).
 							<br />
 						</p>
-						<div className="flex w-full flex-row flex-wrap justify-between gap-2 pt-5 text-2xl lg:text-5xl">
+						<div className="xs:flex hidden w-full flex-row flex-wrap justify-between gap-2 pt-5 text-2xl lg:text-5xl">
 							<div className="group flex flex-col items-center gap-2">
 								<SiReact className="group-hover:text-accent-100 duration-300" />
 								<span className="text-sm leading-none font-bold opacity-0 duration-300 group-hover:opacity-100 lg:text-lg">

@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 import { animate, motion, useMotionValue } from 'framer-motion';
 
 import { useDotCount } from '@hooks/useDotCount';
-import { useMobile } from '@hooks/useMobile';
 
 import { Skills, SkillCarousel } from '@config/Skills';
 import { type Duration } from '@config/about/Types';
 
 import ProfilePicture from '@assets/layout/Event.png';
+import { BusinessLinks } from '@config/Business';
 
 export default function About() {
-	const { isMobile } = useMobile();
 	const dotCount = useDotCount();
 	const yTranslation = useMotionValue(0);
 	const duration: Duration = { Fast: 35, Slow: 80 };
@@ -46,11 +45,16 @@ export default function About() {
 	}, [yTranslation, currentDuration, rerender, mustFinish]);
 
 	return (
-		<section id="about" className="bg-theme-primary-100 relative z-20 flex h-auto w-full items-center justify-center py-20">
-			<div className="bg-light shadow-dark relative z-21 flex h-11/12 w-11/12 max-w-7xl flex-col shadow-lg md:grid md:grid-cols-2 md:grid-rows-1">
-				<div className="md:from-light relative flex h-full w-full flex-col justify-center gap-10 py-[15%] pl-[15%] md:col-start-1 md:bg-gradient-to-r md:from-80% md:to-[#AAAAAA] md:to-100%">
+		<section id="about" className="relative z-20 flex h-auto w-full items-center justify-center">
+			<div className="absolute top-0 left-0 -z-1 grid h-full w-full grid-cols-2">
+				<div className="bg-primary-100" />
+				<div className="bg-light" />
+			</div>
+
+			<div className="bg-light relative z-21 flex h-full w-full max-w-7xl flex-col border-r-2 border-[#F4f4f4] md:grid md:grid-cols-2 md:grid-rows-1">
+				<div className="bg-primary-100 text-light relative flex h-full w-full flex-col justify-center gap-10 py-[15%] pl-[15%] md:col-start-1">
 					<div className="flex flex-col gap-4 pr-[10%]">
-						<h2 className="text-primary-100 text-lg font-black">
+						<h2 className="text-lg font-bold">
 							<span className="text-xs">01</span> About Me
 						</h2>
 						<p className="text-justify">
@@ -66,7 +70,7 @@ export default function About() {
 						</p>
 					</div>
 					<div className="pointer-events-auto flex flex-col gap-4 pr-[10%]">
-						<h2 className="text-primary-100 text-lg font-black">
+						<h2 className="text-lg font-bold">
 							<span className="text-xs">02</span> Achievements
 						</h2>
 						<p className="text-justify">
@@ -75,7 +79,7 @@ export default function About() {
 								href="https://www.linkedin.com/posts/wbs-coding-school_wbscodingschool-stackfuel-docmorris-activity-7268275100158734338-BoQW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGh3rcBrmsqPjn710ZtpfwsJpmBiUzLS0A"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-accent-100 text-primary-100 cursor-pointer font-bold duration-300 hover:underline">
+								className="hover:text-accent-300 text-accent-200 cursor-pointer font-bold duration-300 hover:underline">
 								Battle of the Bootcamps
 							</a>
 							, designing with my team a full-stack web application prototype under the theme of{' '}
@@ -92,12 +96,12 @@ export default function About() {
 				</div>
 				<div className="relative flex h-full w-full flex-col justify-center overflow-hidden py-[15%] pr-[5%] pl-[10%] md:col-start-2 md:pr-[15%]">
 					<div className="flex flex-col gap-4 px-10">
-						<h2 className="text-primary-100 text-lg font-black">
+						<h2 className="text-primary-100 text-lg font-bold">
 							<span className="text-xs">03</span> Skills
 						</h2>
 						{Skills.map((skill, index) => (
 							<div key={index} className="mb-3.5 flex flex-col gap-1.5">
-								<span className="text-primary-100 text-sm font-black uppercase">{skill.name}</span>
+								<span className="text-primary-100 text-sm font-bold uppercase">{skill.name}</span>
 								<div className="flex items-center gap-2">
 									{[...Array<number>(dotCount)].map((_, index) => (
 										<span
@@ -109,10 +113,16 @@ export default function About() {
 								</div>
 							</div>
 						))}
-						<span className="text-primary-100 text-sm font-black">and so much more...</span>
+						<a
+							href={BusinessLinks[0].url}
+							rel="noopener noreferrer"
+							target="_blank"
+							className="text-primary-100 hover:text-accent-200 pointer-events-auto text-sm font-bold underline underline-offset-4 duration-300">
+							and so much more...
+						</a>
 
 						<motion.div
-							className={`text-primary-100 pointer-events-auto absolute top-0 right-0 mr-[10%] h-full flex-col gap-8 ${isMobile ? 'hidden' : 'flex'}`}
+							className="text-primary-100 xs:flex pointer-events-auto absolute top-0 right-0 mr-[10%] hidden h-full flex-col gap-8"
 							style={{ y: yTranslation }}
 							onHoverStart={() => {
 								setMustFinish(true);
@@ -133,8 +143,8 @@ export default function About() {
 					</div>
 				</div>
 			</div>
-			<div className="bg-theme-accent-100 absolute z-20 h-full w-0.25 opacity-10"></div>
-			<div className="border-theme-accent-100 absolute z-20 h-full w-[80%] max-w-6xl border-x-2 opacity-10"></div>
+			<div className="from-primary-100 to-accent-100 absolute top-0 right-0 z-21 h-1 w-full bg-gradient-to-r md:w-1/2"></div>
+			<div className="from-primary-100 to-accent-100 absolute right-0 bottom-0 z-21 h-1 w-full bg-gradient-to-r md:w-1/2"></div>
 		</section>
 	);
 }

@@ -3,7 +3,7 @@ import { useProject } from '@hooks/useProject';
 
 import type { PageState } from '@config/Page';
 
-import Button from '@components/Button';
+import ContactButton from '@components/ContactButton';
 
 export default function Theme({ id }: { id: number }) {
 	const { setPageState } = usePageState();
@@ -15,14 +15,16 @@ export default function Theme({ id }: { id: number }) {
 			<div className="grid w-full max-w-7xl grid-cols-2 justify-between gap-10 px-5 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap">
 				{Project.colors.map((color) => (
 					<div key={color.name} className="z-21 flex flex-col items-center gap-4">
-						<div className="h-32 w-32 rounded-full border-1 border-[#AAAAAA]" style={{ backgroundColor: color.hex }}></div>
+						<div
+							className="h-32 w-32 rounded-full border-1 border-[#AAAAAA] sm:h-40 sm:w-40"
+							style={{ backgroundColor: color.hex }}></div>
 						<span className="font-serif font-bold">{color.name}</span>
 					</div>
 				))}
 			</div>
 
 			<div className={`${Project.font === 'Poppins' ? 'font-poppins' : 'font-league'} w-full max-w-7xl`}>
-				<div className="flex w-full flex-row items-center justify-around text-3xl tracking-widest">
+				<div className="hidden w-full flex-col items-center justify-around text-2xl tracking-widest sm:flex sm:flex-row md:text-3xl">
 					<div className="flex flex-col gap-5 font-bold">
 						<span>{Project.font} Bold</span>
 						<p>a b c d e f g h i j k l</p>
@@ -38,10 +40,10 @@ export default function Theme({ id }: { id: number }) {
 				</div>
 			</div>
 
-			<Button className="mb-5" onClick={() => setPageState('About' as PageState)}>
+			<ContactButton className="-mt-30 flex sm:-mt-10 md:hidden" onClick={() => setPageState('About' as PageState)}>
 				Contact Me
-			</Button>
-			<div className="border-dark absolute z-10 h-full w-[80%] max-w-6xl border-x-1 opacity-10"></div>
+			</ContactButton>
+			<div className="border-dark absolute z-10 h-full w-[95%] max-w-6xl border-x-1 opacity-10"></div>
 		</section>
 	);
 }

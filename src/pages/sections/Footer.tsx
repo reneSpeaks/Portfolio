@@ -7,11 +7,10 @@ import { Business, BusinessLinks } from '@config/Business';
 import { Navigation } from '@config/Navigation';
 
 export default function Footer() {
-	const { pageState, setPageState } = usePageState();
+	const { setPageState } = usePageState();
 
 	return (
-		<footer
-			className={`${pageState !== 'Default' && 'hidden'} bg-theme-footer text-light sticky bottom-0 left-0 z-0 flex w-full flex-col items-center overflow-hidden`}>
+		<footer className="bg-theme-footer text-light sticky bottom-0 left-0 z-0 flex w-full flex-col items-center overflow-hidden">
 			<span className="text-theme-footer-bg pointer-events-none absolute -bottom-10 left-0 text-[18rem] leading-none font-bold opacity-10">
 				Weiberlenn
 			</span>
@@ -39,6 +38,11 @@ export default function Footer() {
 					<li>
 						<a className="hover:text-theme-accent-200 cursor-pointer duration-300" onClick={() => setPageState('About')}>
 							Contact
+						</a>
+					</li>
+					<li>
+						<a className="hover:text-theme-accent-200 cursor-pointer duration-300" onClick={() => setPageState('Works')}>
+							Works
 						</a>
 					</li>
 				</ul>

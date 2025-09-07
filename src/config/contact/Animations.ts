@@ -22,3 +22,8 @@ export const Shadow: Variants = {
 	},
 	exit: { boxShadow: 'none', pointerEvents: 'none', opacity: 1 }
 };
+
+export const Backdrop: Variants = {
+	hidden: { opacity: 0, pointerEvents: 'none' },
+	visible: { opacity: 0.75, pointerEvents: 'auto' }
+};

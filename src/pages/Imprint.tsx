@@ -1,4 +1,5 @@
 import Contact from '@pages/sections/Contact';
+import ProjectsOverview from '@pages/sections/ProjectsOverview';
 
 import AnimatedIcon from '@components/AnimatedIcon';
 import Transition from '@components/Transition';
@@ -6,6 +7,7 @@ import Transition from '@components/Transition';
 import { Business, BusinessLinks } from '@config/Business';
 
 import background from '@assets/layout/Home_BG_Mateusz_Dach.jpg';
+import ScrollBar from '@pages/sections/ScrollBar';
 
 export default function Imprint() {
 	return (
@@ -55,6 +57,8 @@ export default function Imprint() {
 				/>
 			</section>
 			<Contact />
+			<ProjectsOverview />
+			<ScrollBar />
 		</Transition>
 	);
 }

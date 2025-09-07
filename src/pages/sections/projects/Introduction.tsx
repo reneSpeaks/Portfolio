@@ -26,7 +26,6 @@ export default function Introduction({ id }: { id: number }) {
 			</Link>
 			<div className="absolute -bottom-30 left-[6%] overflow-hidden text-[13rem] font-bold text-nowrap opacity-10">
 				{Project.introductionBackground}
-				{/* <img src={Project.logo} alt="" className="pointer-events-none h-50" /> */}
 			</div>
 			<div className="from-theme-primary-100 to-theme-accent-100 absolute top-0 z-11 h-1 w-full bg-gradient-to-l"></div>
 		</section>

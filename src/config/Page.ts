@@ -16,4 +16,4 @@ export const WindowSize: WindowSize = {
 	mobile: mobileBreakpoint * fontSize
 };
 
-export type PageState = 'Default' | 'Intro' | 'About' | 'Privacy' | 'Loading';
+export type PageState = 'Default' | 'Intro' | 'About' | 'Works' | 'Loading';

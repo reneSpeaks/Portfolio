@@ -43,6 +43,7 @@
 	--font-league: 'League';
 	--font-poppins: 'Poppins-Regular', sans;
 	--font-signature: 'Signature', sans-serif;
+	--breakpoint-xs: 480px;
 
 	--animate-rotate-border: border-rotate 3s linear infinite;
 	--animate-loading: counter 3s ease-in-out forwards;
@@ -52,6 +53,7 @@
 	--animate-toast-leave: toast-slide-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
 	--animate-spin-cap: spin-cap 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 	--animate-glow-pulse: glow-pulse 2.5s ease-in-out infinite alternate;
+	--animate-text-reveal: text-reveal 3s ease-in-out both;
 
 	@keyframes loading {
 		58%,
@@ -178,6 +180,16 @@
 			transform: rotate(365deg);
 		}
 	}
+
+	@keyframes text-reveal {
+		0%,
+		25% {
+			clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+		}
+		50% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		}
+	}
 }
 
 @layer components {
@@ -258,13 +270,29 @@
 }
 
 body {
-	@apply font-league overflow-y-scroll;
+	@apply font-league;
+}
+
+html {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	&::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, and Opera */
+	}
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, and Opera */
+}
+
+.no-scroll {
+	overflow: hidden !important;
 }
 
 @custom-variant hover (&:hover);

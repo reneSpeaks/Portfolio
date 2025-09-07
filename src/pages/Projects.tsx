@@ -10,13 +10,13 @@ import Contact from '@pages/sections/Contact';
 
 import Transition from '@components/Transition';
 
-import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
 import chevronData from '@assets/layout/animation/lotties/chevron-right.json';
+import ProjectsOverview from './sections/ProjectsOverview';
+import ScrollBar from '@pages/sections/ScrollBar';
 
 export default function Projects() {
-	const { pageState } = usePageState();
 	const { projectId } = useParams();
 	const { Projects } = useProject();
 	const navigate = useNavigate();
@@ -45,6 +45,8 @@ export default function Projects() {
 		<Transition>
 			<Main id={Project.id} />
 			<Contact />
+			<ProjectsOverview />
+			<ScrollBar />
 			<Introduction id={Project.id} />
 			<Analysis id={Project.id} />
 			<Theme id={Project.id} />
@@ -52,15 +54,15 @@ export default function Projects() {
 				to={`/projects/${Project.id + 1 < Projects.length ? Project.id + 1 : 0}`}
 				onMouseLeave={() => setIsStopped(true)}
 				onMouseEnter={() => setIsStopped(false)}
-				className={`${pageState !== 'Default' ? 'invisible hidden' : 'visible flex'} group pointer-events-auto relative z-20 flex h-auto w-full cursor-pointer flex-col items-center justify-center`}>
+				className="group pointer-events-auto relative z-20 flex h-auto w-full cursor-pointer flex-col items-center justify-center">
 				<div className="flex w-full flex-row items-center justify-around py-10">
 					<div className="flex flex-col gap-5">
 						<span className="text-theme-next-accent group-hover:text-dark font-serif text-sm duration-300">NEXT WORK</span>
-						<span className="decoration-theme-next-accent text-5xl font-bold underline decoration-2 underline-offset-4">
+						<span className="decoration-theme-next-accent text-4xl font-bold underline decoration-2 underline-offset-4 sm:text-5xl">
 							{Projects[Project.id + 1 < Projects.length ? Project.id + 1 : 0].name}
 						</span>
 					</div>
-					<div className="">
+					<div className="hidden sm:flex">
 						<Lottie options={chevronLottieOptions} width={40} height={40} isStopped={isStopped} />
 					</div>
 				</div>

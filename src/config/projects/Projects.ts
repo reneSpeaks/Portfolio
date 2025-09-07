@@ -1,15 +1,16 @@
 import musikLebenHeader from '@assets/projects/header/musiklebenintro.mp4';
-import musikLebenLogo from '@assets/projects/logo/Musikleben_Logo_uni.png';
-import musikLebenMockUp from '@assets/projects/mockups/MusikLeben.png';
+import musikLebenLogo from '@assets/projects/logo/ml_logo.svg';
+import musikLebenMockUp from '@assets/projects/mockups/ml_mockup.png';
 import musikLebenThumbnail from '@assets/projects/thumbnails/MusikLeben.png';
 import musikLebenDescription from '@config/projects/descriptions/ml_introduction.md?raw';
 import musikLebenInsights from '@config/projects/descriptions/ml_insights.md?raw';
 
 import portfolioHeader from '@assets/projects/header/Portfolio_Header.png';
 import portfolioLogo from '@assets/layout/logo/R_Primary.svg';
+import portfolioMockUp from '@assets/projects/mockups/pf_mockup.png';
+import portfolioThumbnail from '@assets/projects/thumbnails/Portfolio.png';
 import portfolioDescription from '@config/projects/descriptions/portfolio_introduction.md?raw';
 import portfolioInsights from '@config/projects/descriptions/portfolio_insights.md?raw';
-import portfolioThumbnail from '@assets/projects/thumbnails/Portfolio.png';
 
 export type Projects = {
 	id: number;
@@ -95,7 +96,7 @@ export const Projects: Projects = [
 	},
 	{
 		id: 1,
-		name: 'Portfolio Website',
+		name: 'Portfolio',
 		font: 'League Spartan',
 		headerType: 'image',
 		subheader: 'A showcase of my work and projects.',
@@ -109,7 +110,7 @@ export const Projects: Projects = [
 		technologies: ['React.js', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'Framer Motion'],
 		demo: 'https://www.weiberlenn.name',
 		header: portfolioHeader,
-		// mockup: portfolioMockUp,
+		mockup: portfolioMockUp,
 		thumbnail: portfolioThumbnail,
 		theme: {
 			'--color-navigation': '#181818',

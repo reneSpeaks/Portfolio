@@ -34,7 +34,7 @@ export default function Main({ id }: { id: number }) {
 	}, [Project, Projects, setIsThemed]);
 
 	return (
-		<main className="text-theme sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden transition-all duration-500 ease-in-out sm:p-4">
+		<main className="text-theme sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-hidden transition-all duration-500 ease-in-out sm:p-4">
 			<div className="absolute inset-0">
 				{Project.headerType === 'video' ? (
 					<video
