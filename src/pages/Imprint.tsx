@@ -12,8 +12,8 @@ import ScrollBar from '@pages/sections/ScrollBar';
 export default function Imprint() {
 	return (
 		<Transition>
-			<section className="flex w-full max-w-7xl flex-col items-center justify-center place-self-center">
-				<div className="mt-40 ml-10 flex w-1/2 flex-col gap-5 self-start sm:self-center">
+			<section className="flex h-dvh w-full max-w-7xl flex-col items-center justify-center place-self-center transition-all duration-500 ease-in-out">
+				<div className="ml-10 flex w-1/2 flex-col gap-5 self-start sm:self-center">
 					<h1 className="text-theme-primary-100 text-4xl font-black sm:text-5xl">Imprint</h1>
 					<h2 className="text-2xl font-bold sm:text-3xl">Details</h2>
 					<div className="flex flex-col">
