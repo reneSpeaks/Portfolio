@@ -15,11 +15,11 @@ export const CloseButton: Variants = {
 };
 
 export const FlyFromLeft: Variants = {
-	hidden: { x: '-250%', transition: { duration: 0.5, ease: easeInOut } },
+	hidden: { x: '-100vw', transition: { duration: 0.5, ease: easeInOut } },
 	visible: { x: 0, transition: { duration: 0.5, ease: easeInOut } }
 };
 
 export const FlyFromRight: Variants = {
-	hidden: { x: '250%', transition: { duration: 0.5, ease: easeInOut } },
+	hidden: { x: '100vw', transition: { duration: 0.5, ease: easeInOut } },
 	visible: { x: 0, transition: { duration: 0.5, ease: easeInOut } }
 };
