@@ -54,8 +54,8 @@ export const Scale: Variants = {
 };
 
 export const Hover: Variants = {
-	rest: { x: '-100vw', transition: { duration: 0.6, ease: 'easeIn' } },
-	hover: { x: '0', transition: { duration: 0.6, ease: 'easeOut' } }
+	rest: { x: '-100vw', transition: { duration: 0.4, ease: 'easeIn' } },
+	hover: { x: '0', transition: { duration: 0.4, ease: 'easeOut' } }
 };
 
 export const Counter: Variants = {
@@ -64,8 +64,8 @@ export const Counter: Variants = {
 };
 
 export const CounterMask: Variants = {
-	rest: { backgroundSize: '100% 0%', transition: { duration: 0.4, ease: 'easeOut' } },
-	hover: { backgroundSize: '100% 100%', transition: { duration: 0.4, delay: 0.6, ease: 'easeOut' } }
+	rest: { backgroundSize: '100% 0%', transition: { duration: 0.2, ease: 'easeOut' } },
+	hover: { backgroundSize: '100% 100%', transition: { duration: 0.2, delay: 0.6, ease: 'easeOut' } }
 };
 
 export const BaseCap: Variants = {
