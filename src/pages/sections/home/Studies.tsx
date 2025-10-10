@@ -16,8 +16,10 @@ export default function Studies() {
 	const { setPageState } = usePageState();
 
 	return (
-		<section id="studies" className="bg-light relative z-20 flex h-auto w-full flex-col items-center justify-center gap-20 px-5 py-20">
-			<div className="absolute top-0 left-1/2 z-99 h-full w-full max-w-7xl -translate-x-1/2 border-x-2 border-[#F4F4F4]" />
+		<section
+			id="studies"
+			className="relative z-20 flex h-auto w-full flex-col items-center justify-center gap-20 bg-[#f3f3f3] px-5 py-20">
+			<div className="absolute top-0 left-1/2 z-99 h-full w-full max-w-7xl -translate-x-1/2 border-x-2 border-[#EDEDED]" />
 			<motion.div
 				initial={{ y: '20px', opacity: 0 }}
 				whileInView={{ y: '0', opacity: 1 }}
