@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import { WindowSize } from '@config/Page';
 import { Pens as CodePens } from '@config/pens/Pens';
-import { Scale, Counter, Line, Pen, PenMask } from '@config/pens/Animations';
+import { Scale, Counter, Line, PenMask } from '@config/pens/Animations';
 
 export default function Pens() {
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= WindowSize.tablet);
