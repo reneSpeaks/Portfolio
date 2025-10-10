@@ -14,8 +14,14 @@ export default function Footer() {
 			<span className="text-theme-footer-bg pointer-events-none absolute -bottom-10 left-0 text-[18rem] leading-none font-bold opacity-10">
 				Weiberlenn
 			</span>
-			<header className="pointer-events-none mt-15 flex w-full max-w-7xl flex-col">
-				<div className="logo-cutout bg-theme-accent-100 h-20 w-20 self-center"></div>
+			<header className="group pointer-events-none relative mt-15 flex w-full max-w-7xl flex-col">
+				<div
+					className="logo-cutout bg-theme-accent-100 pointer-events-auto h-20 w-20 cursor-pointer self-center"
+					onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+				/>
+				<span className="text-theme-accent-100 absolute top-1/2 left-1/2 -translate-y-1/2 text-2xl font-bold opacity-0 transition-all duration-300 group-hover:translate-x-10 group-hover:opacity-100">
+					Top
+				</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					className="stroke-theme-accent-100 w-4/5 max-w-7xl self-start fill-none"
