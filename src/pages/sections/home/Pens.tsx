@@ -23,7 +23,7 @@ export default function Pens() {
 				<h2 className="text-theme text-4xl font-bold">Web is fun</h2>
 			</div>
 
-			<section className="z-20 grid h-full w-full grid-cols-1 sm:grid-cols-2 md:block">
+			<section className="relative z-20 grid h-full w-full grid-cols-1 sm:grid-cols-2 md:block">
 				{CodePens.map((pen, index) => (
 					<motion.a
 						href={pen.url}
@@ -31,7 +31,6 @@ export default function Pens() {
 						rel="noopener noreferrer"
 						key={pen.title}
 						className="shadow-left bg-light pointer-events-auto relative float-left clear-none flex h-85 cursor-pointer flex-col overflow-hidden md:w-1/4 lg:h-100"
-						variants={Pen}
 						whileHover="hover"
 						initial="rest">
 						<figure className="z-1 h-full w-full">
@@ -65,6 +64,15 @@ export default function Pens() {
 						<motion.div variants={PenMask} className="bg-accent-300 absolute inset-0 w-0" />
 					</motion.a>
 				))}
+				<div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+					<motion.div
+						initial={{ height: '100%' }}
+						whileInView={{ height: '0%' }}
+						viewport={{ amount: 0.6, once: true }}
+						transition={{ duration: 0.5 }}
+						className="bg-primary-100 absolute inset-0 z-20"
+					/>
+				</div>
 			</section>
 
 			<div className="absolute top-0 left-1/2 -z-1 h-full w-full max-w-7xl -translate-x-1/2 border-x-2 border-[#EDEDED]" />

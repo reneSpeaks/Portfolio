@@ -160,7 +160,7 @@ export default function Studies() {
 							<motion.div
 								initial={{ height: '100%' }}
 								whileInView={{ height: '0%' }}
-								viewport={{ amount: 0.5, once: true }}
+								viewport={{ amount: 0.8, once: true }}
 								transition={{ duration: 0.5 }}
 								className="from-dark to-theme-primary-300 absolute inset-0 -z-1 bg-gradient-to-r"
 							/>
