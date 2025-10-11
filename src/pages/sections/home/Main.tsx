@@ -5,6 +5,7 @@ import Lottie from 'react-lottie';
 import AnimatedIcon from '@components/AnimatedIcon';
 
 import { usePageState } from '@hooks/usePageState';
+import { useScrambleText } from '@hooks/useScrambleText';
 
 import { type PageState } from '@config/Page';
 import { BusinessLinks } from '@config/Business';
@@ -20,6 +21,8 @@ export default function Main() {
 	const { pageState, setPageState } = usePageState();
 	const [quote, setQuote] = useState<Quotes | null>(null);
 	const [capClicks, setCapClicks] = useState(0);
+	const unscrambled = useScrambleText('Passionate Web Developer', pageState === 'Default');
+	const [loaded, setLoaded] = useState(false);
 
 	const arrowLottieOptions = {
 		loop: true,
@@ -35,6 +38,13 @@ export default function Main() {
 		const randomQuote = Citation[Math.floor(Math.random() * Citation.length)];
 		setQuote(randomQuote);
 	}, []);
+
+	useEffect(() => {
+		if (pageState === 'Default' && !loaded) {
+			const timer = setTimeout(() => setLoaded(true), 2400); // 2s delay + scramble duration
+			return () => clearTimeout(timer);
+		}
+	}, [pageState, loaded]);
 
 	return (
 		<main className="text-primary-100 sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-x-hidden transition-all duration-500 ease-in-out sm:p-4">
@@ -127,7 +137,7 @@ export default function Main() {
 							/>
 						</motion.svg>
 					</h1>
-					<h3 className="z-12 font-serif italic sm:text-lg">Passionate Web Developer</h3>
+					<h3 className="z-12 font-serif italic sm:text-lg">{loaded ? 'Passionate Web Developer' : unscrambled}</h3>
 
 					<Button className="mt-8 w-fit" onClick={() => setPageState('About' as PageState)}>
 						About Me
