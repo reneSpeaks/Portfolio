@@ -66,7 +66,7 @@ export default function Pens() {
 				))}
 				<div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
 					<motion.div
-						initial={{ height: '100%' }}
+						initial={isMobile ? { height: '0%' } : { height: '100%' }}
 						whileInView={{ height: '0%' }}
 						viewport={{ amount: 0.6, once: true }}
 						transition={{ duration: 0.5 }}
