@@ -1,7 +1,7 @@
 import { usePageState } from '@hooks/usePageState';
 import { motion } from 'framer-motion';
 
-import { Backdrop, CloseButton, Container, FlyFromLeft, FlyFromRight } from '@config/works/Animations';
+import { Backdrop, CloseButton, Container, FlyFromLeft, FlyFromRight, CounterLeft, CounterRight } from '@config/works/Animations';
 import { Projects } from '@config/projects/Projects';
 import ReactMarkdown from 'react-markdown';
 import Button from '@components/Button';
@@ -50,10 +50,12 @@ export default function ProjectsOverview() {
 										animate={pageState === 'Works' ? 'visible' : 'hidden'}
 										exit="hidden"
 										variants={FlyFromLeft}
-										className="drop-shadow-dark relative hidden items-end justify-end drop-shadow-[0_20px_80px_rgba(0,0,0,0.55)]/55 md:col-span-5 md:flex">
-										<span className="text-light drop-shadow-dark mx-10 text-[14rem] leading-none font-bold drop-shadow-md">
+										className="drop-shadow-dark relative z-1 hidden items-end justify-end drop-shadow-[0px_20px_80px_rgba(0,0,0,0.55)]/55 md:col-span-5 md:flex">
+										<motion.span
+											variants={CounterLeft}
+											className="text-light drop-shadow-dark mx-10 text-[14rem] leading-none font-bold drop-shadow-md">
 											0{index + 1}
-										</span>
+										</motion.span>
 										<img
 											src={project.thumbnail}
 											alt={project.name}
@@ -118,10 +120,12 @@ export default function ProjectsOverview() {
 										animate={pageState === 'Works' ? 'visible' : 'hidden'}
 										exit="hidden"
 										variants={FlyFromRight}
-										className="drop-shadow-dark relative hidden items-end justify-end drop-shadow-[0_20px_80px_rgba(0,0,0,0.55)]/55 md:col-span-5 md:flex">
-										<span className="text-light drop-shadow-dark mx-10 text-[14rem] leading-none font-bold drop-shadow-md">
+										className="drop-shadow-dark relative hidden items-end justify-end drop-shadow-[0px_20px_80px_rgba(0,0,0,0.55)]/55 md:col-span-5 md:flex">
+										<motion.span
+											variants={CounterRight}
+											className="text-light drop-shadow-dark mx-10 text-[14rem] leading-none font-bold drop-shadow-md">
 											0{index + 1}
-										</span>
+										</motion.span>
 										<img
 											src={project.thumbnail}
 											alt={project.name}

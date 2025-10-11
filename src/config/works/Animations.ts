@@ -23,3 +23,13 @@ export const FlyFromRight: Variants = {
 	hidden: { x: '100vw', transition: { duration: 0.5, ease: easeInOut } },
 	visible: { x: 0, transition: { duration: 0.5, ease: easeInOut } }
 };
+
+export const CounterLeft: Variants = {
+	hidden: { opacity: 0, x: 40, transition: { duration: 0.3 } },
+	visible: { opacity: 1, x: 0, transition: { delay: 0.6, duration: 0.3 } }
+};
+
+export const CounterRight: Variants = {
+	hidden: { opacity: 0, x: -40, transition: { duration: 0.3 } },
+	visible: { opacity: 1, x: 0, transition: { delay: 0.6, duration: 0.3 } }
+};
