@@ -14,7 +14,7 @@ export function useScrambleText(text: string, active: boolean, duration = 1000, 
 	const [display, setDisplay] = useState(scrambleText());
 
 	useEffect(() => {
-		let timeoutId: NodeJS.Timeout | null = null;
+		let timeoutId: ReturnType<typeof setTimeout> | null = null;
 		let frame = 0;
 		let cancelled = false;
 
