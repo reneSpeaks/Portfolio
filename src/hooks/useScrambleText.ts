@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export function useScrambleText(text: string, active: boolean, duration = 1000, interval = 30, delay = 1200) {
-	const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	const chars = '█▓▒░█▓▒░█▓▒░<>/';
 	const scrambleText = useCallback(
 		() =>
 			text

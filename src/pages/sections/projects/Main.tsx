@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { useTheme } from '@hooks/useTheme';
 import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
+import { useScrambleText } from '@hooks/useScrambleText';
 
 import { BottomInfo, Hero } from '@config/projects/Animations';
 
@@ -12,6 +13,11 @@ export default function Main({ id }: { id: number }) {
 	const { pageState } = usePageState();
 	const { setIsThemed } = useTheme();
 	const Project = Projects[id];
+	const [loaded, setLoaded] = useState(false);
+
+	const unscrambledRole = useScrambleText(Project.role, pageState === 'Default');
+	const unscrambledContext = useScrambleText(Project.context, pageState === 'Default');
+	const unscrambledPeriod = useScrambleText(Project.period, pageState === 'Default');
 
 	useEffect(() => {
 		// Set variables on body
@@ -32,6 +38,13 @@ export default function Main({ id }: { id: number }) {
 			setIsThemed(0);
 		};
 	}, [Project, Projects, setIsThemed]);
+
+	useEffect(() => {
+		if (pageState === 'Default' && !loaded) {
+			const timer = setTimeout(() => setLoaded(true), 2400); // 2s delay + scramble duration
+			return () => clearTimeout(timer);
+		}
+	}, [pageState, loaded]);
 
 	return (
 		<main className="text-theme sticky top-0 z-10 flex h-dvh w-full justify-center place-self-start self-center overflow-hidden transition-all duration-500 ease-in-out sm:p-4">
@@ -65,13 +78,13 @@ export default function Main({ id }: { id: number }) {
 				exit="exit"
 				className="absolute bottom-4 z-12 flex w-screen flex-col items-center justify-center md:flex-row md:gap-10">
 				<p className="text-theme-header text-lg font-bold" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-bold">Role</span>&nbsp;{Project.role}
+					<span className="text-theme font-bold">Role</span>&nbsp;{!loaded ? unscrambledRole : Project.role}
 				</p>
 				<p className="text-theme-header text-lg font-bold" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-bold">Context</span>&nbsp;{Project.context}
+					<span className="text-theme font-bold">Context</span>&nbsp;{!loaded ? unscrambledContext : Project.context}
 				</p>
 				<p className="text-theme-header text-lg font-bold" style={{ wordSpacing: '0.25rem' }}>
-					<span className="text-theme font-bold">Period</span>&nbsp;{Project.period}
+					<span className="text-theme font-bold">Period</span>&nbsp;{!loaded ? unscrambledPeriod : Project.period}
 				</p>
 			</motion.div>
 			<div className="from-theme-primary-100 to-theme-accent-100 absolute bottom-0 z-11 h-1 w-full bg-gradient-to-l"></div>
