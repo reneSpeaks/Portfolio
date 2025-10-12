@@ -2,10 +2,10 @@ import { type Variants } from 'framer-motion';
 
 export const NavigationStagger: Variants = {
 	open: {
-		transition: { staggerChildren: 0.07, delayChildren: 0.1 }
+		transition: { staggerChildren: 0.07, delayChildren: 0.025 }
 	},
 	closed: {
-		transition: { staggerChildren: 0.03, delayChildren: 0 }
+		transition: { staggerChildren: 0, delayChildren: 0 }
 	}
 };
 
@@ -31,14 +31,14 @@ export const SideNavigation: Variants = {
 	open: () => ({
 		x: 0,
 		transition: {
-			duration: 0.5,
+			duration: 0.25,
 			ease: ['easeIn', 'easeOut']
 		}
 	}),
 	closed: {
 		x: -250,
 		transition: {
-			duration: 0.5,
+			duration: 0.25,
 			ease: ['easeIn', 'easeOut']
 		}
 	}

@@ -68,7 +68,7 @@ export default function Contact() {
 				animate={pageState === 'About' ? 'visible' : 'hidden'}
 				exit="hidden"
 				variants={Backdrop}
-				className="bg-dark fixed top-0 left-0 z-50 h-screen w-screen opacity-75 duration-500"
+				className="bg-dark fixed top-0 left-0 z-50 h-screen w-screen opacity-75 duration-200"
 			/>
 
 			<motion.section
