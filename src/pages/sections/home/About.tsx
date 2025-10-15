@@ -19,7 +19,7 @@ export default function About() {
 	const [rerender, setRerender] = useState(false);
 
 	useEffect(() => {
-		// Final Position adjusted by Icon (w-14 56px), gap-8 (32px) and offset (18px)
+		// Final Position adjusted by Icon w-14 (56px), gap-8 (32px) and offset (18px)
 		const finalPosition = (0 - SkillCarousel.length * 56 * 2 - (SkillCarousel.length * 32 * 2 - 32)) / 2 - 18;
 		let controls;
 
@@ -59,8 +59,8 @@ export default function About() {
 						</h2>
 						<p className="text-justify">
 							I'm René, a German guy living near <strong className="text-accent-100">Berlin</strong>, where I work as{' '}
-							<strong className="text-accent-100">Web Developer</strong>. I used to work with Music and Voiceover producing
-							Audio for Advertisements but have since pivoted back into development, my real passion.
+							<strong className="text-accent-100">Web Developer</strong>. I used to work with music and voiceover producing
+							audio for advertisements but have since pivoted back into development, my real passion.
 						</p>
 						<p className="text-justify">
 							If there is one thing I love, it is the creative process of{' '}
