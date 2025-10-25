@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import { usePageState } from '@hooks/usePageState';
 import { useProject } from '@hooks/useProject';
 
@@ -12,7 +14,12 @@ export default function Theme({ id }: { id: number }) {
 
 	return (
 		<section className="relative z-20 flex h-auto w-full flex-col items-center justify-center gap-30 overflow-hidden bg-[#F6F6F6] py-10">
-			<div className="grid w-full max-w-7xl grid-cols-2 justify-between gap-10 px-5 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap">
+			<motion.div
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.2 }}
+				transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+				className="grid w-full max-w-7xl grid-cols-2 justify-between gap-10 px-5 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap">
 				{Project.colors.map((color) => (
 					<div key={color.name} className="z-21 flex flex-col items-center gap-4">
 						<div
@@ -21,10 +28,15 @@ export default function Theme({ id }: { id: number }) {
 						<span className="font-serif font-bold">{color.name}</span>
 					</div>
 				))}
-			</div>
+			</motion.div>
 
 			<div className={`${Project.font === 'Poppins' ? 'font-poppins' : 'font-league'} w-full max-w-7xl`}>
-				<div className="hidden w-full flex-col items-center justify-around text-2xl tracking-widest sm:flex sm:flex-row md:text-3xl">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+					className="hidden w-full flex-col items-center justify-around text-2xl tracking-widest sm:flex sm:flex-row md:text-3xl">
 					<div className="flex flex-col gap-5 font-bold">
 						<span>{Project.font} Bold</span>
 						<p>a b c d e f g h i j k l</p>
@@ -37,7 +49,7 @@ export default function Theme({ id }: { id: number }) {
 						<p>m n o p q r s t u v w</p>
 						<p>x y z 1 2 3 4 5 6 7 8 9</p>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 
 			<ContactButton className="-mt-30 flex sm:-mt-10 md:hidden" onClick={() => setPageState('About' as PageState)}>

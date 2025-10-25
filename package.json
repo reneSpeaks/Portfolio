@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "1.0.0",
 	"type": "module",
-	"description": "A Portfolio Project using Tailwind, TypeScript, React, Vite, Prettier, Lottie and ESLint",
+	"description": "A Portfolio Project using Tailwind, TypeScript, React, Vite, Prettier, Lottie, Framer Motion and ESLint",
 	"author": "René Weiberlenn",
 	"license": "MIT",
 	"keywords": [

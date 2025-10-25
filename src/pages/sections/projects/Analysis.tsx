@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import { motion } from 'framer-motion';
 
 import { useProject } from '@hooks/useProject';
 
@@ -9,9 +10,21 @@ export default function Analysis({ id }: { id: number }) {
 
 	return (
 		<section className="relative z-20 flex h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-[#F6F6F6] py-15">
-			<h5 className="text-theme text-3xl font-bold sm:text-5xl">Analysis & Insights</h5>
+			<motion.h5
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+				className="text-theme text-3xl font-bold sm:text-5xl">
+				Analysis & Insights
+			</motion.h5>
 			<div className="flex flex-col items-center justify-center lg:flex-row lg:gap-10">
-				<div className="z-11 flex max-w-3xl flex-col gap-4 p-6">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.5 }}
+					transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+					className="z-11 flex max-w-3xl flex-col gap-4 p-6">
 					<ReactMarkdown
 						components={{
 							h4: ({ children }) => (
@@ -24,10 +37,15 @@ export default function Analysis({ id }: { id: number }) {
 						}}>
 						{Project.insights}
 					</ReactMarkdown>
-				</div>
-				<div className="z-11">
+				</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.5 }}
+					transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+					className="z-11">
 					<img src={Project.mockup} alt="" className="drop-shadow-theme p-5 drop-shadow-sm lg:max-w-150" />
-				</div>
+				</motion.div>
 			</div>
 			<div className="border-dark absolute z-10 h-full w-[95%] max-w-6xl border-x-1 opacity-10"></div>
 		</section>

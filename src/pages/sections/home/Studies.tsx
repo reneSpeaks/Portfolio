@@ -122,9 +122,9 @@ export default function Studies() {
 						initial="rest"
 						whileHover="hover"
 						animate="rest"
-						className={`${index % 2 === 0 ? 'items-start pl-10 sm:pl-22 lg:ml-20' : 'items-end pr-14 text-right sm:pr-22 lg:mr-20'} shadow-primary-100 hover:shadow-accent-100 pointer-events-auto relative z-0 flex h-80 w-full max-w-xl flex-col justify-end gap-2 pb-8 shadow-[0_5px_60px_0_rgba(0,0,0,.65)] duration-300 md:h-96 md:max-w-2xl lg:h-126 lg:max-w-4xl xl:max-w-5xl`}>
+						className={`${index % 2 === 0 ? 'items-start pl-10 sm:pl-22 md:pl-32 lg:ml-20' : 'items-end pr-14 text-right sm:pr-22 md:pr-32 lg:mr-20'} shadow-studies pointer-events-auto relative z-0 flex h-80 w-full max-w-xl flex-col justify-end gap-2 pb-20 duration-300 md:h-96 md:max-w-2xl lg:h-126 lg:max-w-4xl xl:max-w-5xl`}>
 						<NavLink to={`/projects/${index}`}>
-							<div className="from-theme-primary-100 to-theme-accent-100 absolute top-1/2 left-1/2 -z-1 h-full w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-gradient-to-r p-2">
+							<div className="bg-light absolute top-1/2 left-1/2 -z-1 h-full w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden p-0.25">
 								<img src={project.thumbnail} alt={project.name} className="h-full w-full object-cover" />
 							</div>
 							<motion.div variants={Scale}>

@@ -20,7 +20,6 @@ export default function Main({ id }: { id: number }) {
 	const unscrambledPeriod = useScrambleText(Project.period, pageState === 'Default');
 
 	useEffect(() => {
-		// Set variables on body
 		Object.entries(Project.theme).forEach(([key, value]) => {
 			document.body.style.setProperty(key, value);
 		});
@@ -29,7 +28,6 @@ export default function Main({ id }: { id: number }) {
 			Projects[Project.id + 1 < Projects.length ? Project.id + 1 : 0].theme['--color-theme-accent-100']
 		);
 		setIsThemed(1);
-		// Optionally clean up/reset on unmount
 		return () => {
 			Object.keys(Project.theme).forEach((key) => {
 				document.body.style.removeProperty(key);
@@ -41,7 +39,7 @@ export default function Main({ id }: { id: number }) {
 
 	useEffect(() => {
 		if (pageState === 'Default' && !loaded) {
-			const timer = setTimeout(() => setLoaded(true), 2400); // 2s delay + scramble duration
+			const timer = setTimeout(() => setLoaded(true), 2400);
 			return () => clearTimeout(timer);
 		}
 	}, [pageState, loaded]);

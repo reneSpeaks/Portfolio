@@ -96,7 +96,7 @@ export const Projects: Projects = [
 	},
 	{
 		id: 1,
-		name: 'Portfolio',
+		name: 'Personal Portfolio',
 		font: 'League Spartan',
 		headerType: 'image',
 		subheader: 'A showcase of my work and projects.',

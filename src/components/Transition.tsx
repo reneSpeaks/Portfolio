@@ -22,42 +22,66 @@ export default function Transition({ children }: { children: ReactNode }) {
 				<div className="bg-dark pointer-events-none z-57 flex h-full w-full items-center justify-center" />
 			</motion.div>
 			<motion.div variants={Loader} initial="initial" animate="animate" exit="exit" className="pointer-events-none z-56">
-				<div className="ambience animate-glow-pulse"></div>
 				<svg
-					id="BaseCap"
 					xmlns="http://www.w3.org/2000/svg"
 					version="1.1"
-					xmlnsXlink="http://www.w3.org/1999/xlink"
-					viewBox="0 0 160 125.33"
-					className="fixed top-1/2 left-1/2 z-56 h-36 w-36 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg">
+					width="281"
+					height="281"
+					viewBox="0 0 256 256"
+					className="fixed top-1/2 left-1/2 z-56 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg">
 					<defs>
+						<clipPath id="transition-r-clippath">
+							<path
+								d="M251.44,235.04h-40l-.5-.4-102.5-89.7,1.8-1.6,34.8-31,12.2-10.4c3.9-3.2,7.4-6.2,7.8-6.8,4.8-5.8,7.3-12.8,7.3-20.4,0-17.6-14.3-31.9-31.9-31.9H30.86L5.14,16.24l140.4-.1-.2.2c29.9,2.5,53.6,27.9,53.6,58.3,0,13.4-4.8,26.7-13.5,37.2-.5.6-2.3,2.3-2.6,2.6s-1.1,1-1.1,1l-.5.4-32.9,28.8,103.1,90.4Z"
+								fill="none"
+							/>
+						</clipPath>
 						<linearGradient
-							id="cap-gradient"
-							x1="100.85"
-							y1="73.23"
-							x2="139.26"
-							y2="73.23"
-							gradientTransform="translate(140.34 -16.33) rotate(89.97)"
+							id="transition-r-linear-gradient"
+							x1="-156.53"
+							y1="-98.24"
+							x2="115.46"
+							y2="-98.24"
+							gradientTransform="translate(156 235)"
 							gradientUnits="userSpaceOnUse">
-							<stop offset="0" stopColor="var(--color-accent-100)" />
-							<stop offset="1" stopColor="var(--color-primary-100)" />
+							<stop offset="0" stopColor="#0d324d" />
+							<stop offset="1" stopColor="#1c7496" />
 						</linearGradient>
-						<linearGradient id="cap-gradient1" x1="18.21" y1="44.29" x2="111.34" y2="44.29" xlinkHref="#cap-gradient" />
+						<clipPath id="transition-r-clippath-1">
+							<polygon points="54.9 147.2 134.9 77.2 101.4 77.2 21.4 147.2 122 235.3 155.5 235.3 54.9 147.2" fill="none" />
+						</clipPath>
+						<linearGradient
+							id="transition-r-linear-gradient1"
+							x1="-169.6"
+							y1="-77.19"
+							x2="21.81"
+							y2="-77.19"
+							gradientTransform="translate(156 235)"
+							gradientUnits="userSpaceOnUse">
+							<stop offset="0" stopColor="#0d324d" />
+							<stop offset="1" stopColor="#1c7496" />
+						</linearGradient>
 					</defs>
-					<path
-						stroke="var(--color-primary-100)"
-						strokeWidth=".25px"
-						strokeMiterlimit="10"
-						fill="url(#cap-gradient)"
-						d="M104.47,99.1c-30.24-.05-56.45-5.17-72.86-14.52-5.66,2.73-23.48,11.58-28.2,17.19-.97,1.15-2.1,4.12-2.18,5.62-.05,1.17,1.27,4.48,1.27,4.48,39.96,16.97,62.32,10.57,84.68,6.21,23.79-4.63,45.38-19.81,45.38-19.81.18-.2.39-.4.59-.59-9.81.95-19.43,1.45-28.67,1.43Z"
-					/>
-					<path
-						stroke="var(--color-primary-100)"
-						strokeWidth=".25px"
-						strokeMiterlimit="10"
-						fill="url(#cap-gradient1)"
-						d="M105.27,8.67h-.34c-.27-3.75-4.82-6.75-10.43-6.76s-10.5,3.16-10.51,7.09c0,.07.02.12.02.19-53.14,5.43-51.04,42.62-49.99,62.7.18,3.52-.07,6.98-.31,9.23,21.65,12.38,61.67,16.98,105.32,11.84,8.09-5.56,19.14-10.88,19.14-10.88,0,0,.72-20.62.05-27.45-3.53-35.87-34.19-44.19-52.96-45.95Z"
-					/>
+					<g clipPath="url(#transition-r-clippath)">
+						<path
+							d="M-.5,29.8l126.8-.1c29.9,2.5,57.4,17,57.4,47.4,0,13.4-4.3,24.4-17.4,37.2-.5.6-2.3,2.3-2.6,2.6-.3.3-1.1,1-1.1,1l-.5.4-32.9,28.8,118.9,105.6"
+							fill="none"
+							stroke="url(#transition-r-linear-gradient)"
+							strokeDasharray="461 463"
+							strokeMiterlimit="10"
+							strokeWidth="70.34"
+						/>
+					</g>
+					<g clipPath="url(#transition-r-clippath-1)">
+						<path
+							d="M154.6,249.8l-116.8-102.6c8.3-8.3,91.4-81.4,91.4-81.4"
+							fill="none"
+							stroke="url(#transition-r-linear-gradient1)"
+							strokeDasharray="278 280"
+							strokeMiterlimit="10"
+							strokeWidth="70.34"
+						/>
+					</g>
 				</svg>
 			</motion.div>
 
