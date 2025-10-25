@@ -13,7 +13,7 @@ export default function Analysis({ id }: { id: number }) {
 			<motion.h5
 				initial={{ opacity: 0, y: 30 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.5 }}
+				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 				className="text-theme text-3xl font-bold sm:text-5xl">
 				Analysis & Insights
@@ -22,7 +22,7 @@ export default function Analysis({ id }: { id: number }) {
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.5 }}
+					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 					className="z-11 flex max-w-3xl flex-col gap-4 p-6">
 					<ReactMarkdown
@@ -41,7 +41,7 @@ export default function Analysis({ id }: { id: number }) {
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.5 }}
+					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 					className="z-11">
 					<img src={Project.mockup} alt="" className="drop-shadow-theme p-5 drop-shadow-sm lg:max-w-150" />

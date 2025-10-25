@@ -54,26 +54,51 @@ export default function About() {
 			<div className="bg-light relative z-21 flex h-full w-full max-w-7xl flex-col border-r-2 border-[#F4f4f4] md:grid md:grid-cols-2 md:grid-rows-1">
 				<div className="bg-primary-100 text-light relative flex h-full w-full flex-col justify-center gap-10 py-[15%] pl-[15%] md:col-start-1">
 					<div className="flex flex-col gap-4 pr-[10%]">
-						<h2 className="text-lg font-bold">
+						<motion.h2
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+							className="text-lg font-bold">
 							<span className="text-xs">01</span> About Me
-						</h2>
-						<p className="text-justify">
+						</motion.h2>
+						<motion.p
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+							className="text-justify">
 							I'm René, a German guy living near <strong className="text-accent-100">Berlin</strong>, where I work as{' '}
 							<strong className="text-accent-100">Web Developer</strong>. I used to work with music and voiceover producing
 							audio for advertisements but have since pivoted back into development, my real passion.
-						</p>
-						<p className="text-justify">
+						</motion.p>
+						<motion.p
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+							className="text-justify">
 							If there is one thing I love, it is the creative process of{' '}
 							<strong className="text-accent-100">building and designing</strong> everywhere I go. If late at night during
 							long hours with friends, writing immersive stories, or creating components for that project that just needs a{' '}
 							<i>little bit of extra love</i>, I'm always all in.
-						</p>
+						</motion.p>
 					</div>
 					<div className="pointer-events-auto flex flex-col gap-4 pr-[10%]">
-						<h2 className="text-lg font-bold">
+						<motion.h2
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+							className="text-lg font-bold">
 							<span className="text-xs">02</span> Achievements
-						</h2>
-						<p className="text-justify">
+						</motion.h2>
+						<motion.p
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+							className="text-justify">
 							In November 2024 I <u>won</u>{' '}
 							<a
 								href="https://www.linkedin.com/posts/wbs-coding-school_wbscodingschool-stackfuel-docmorris-activity-7268275100158734338-BoQW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGh3rcBrmsqPjn710ZtpfwsJpmBiUzLS0A"
@@ -85,7 +110,7 @@ export default function About() {
 							, designing with my team a full-stack web application prototype under the theme of{' '}
 							<strong className="text-accent-100">"Innovation and Sustainable Future"</strong>. I was afterward given the
 							opportunity to work alongside DocMorris, who sponsored the event, and <u>learn</u> from their experienced team.
-						</p>
+						</motion.p>
 					</div>
 
 					<img
@@ -96,11 +121,22 @@ export default function About() {
 				</div>
 				<div className="relative flex h-full w-full flex-col justify-center overflow-hidden py-[15%] pr-[5%] pl-[10%] md:col-start-2 md:pr-[15%]">
 					<div className="flex flex-col gap-4 px-10">
-						<h2 className="text-primary-100 text-lg font-bold">
+						<motion.h2
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+							className="text-primary-100 text-lg font-bold">
 							<span className="text-xs">03</span> Skills
-						</h2>
+						</motion.h2>
 						{Skills.map((skill, index) => (
-							<div key={index} className="mb-3.5 flex flex-col gap-1.5">
+							<motion.div
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, amount: 0.3 }}
+								transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
+								key={index}
+								className="mb-3.5 flex flex-col gap-1.5">
 								<span className="text-primary-100 text-sm font-bold uppercase">{skill.name}</span>
 								<div className="flex items-center gap-2">
 									{[...Array<number>(dotCount)].map((_, index) => (
@@ -111,15 +147,19 @@ export default function About() {
 									))}
 									<span className="pl-3 text-sm text-gray-500">{skill.level * 10}%</span>
 								</div>
-							</div>
+							</motion.div>
 						))}
-						<a
+						<motion.a
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 							href={BusinessLinks[0].url}
 							rel="noopener noreferrer"
 							target="_blank"
 							className="text-primary-100 hover:text-accent-200 pointer-events-auto text-sm font-bold underline underline-offset-4 duration-300">
 							and so much more...
-						</a>
+						</motion.a>
 
 						<motion.div
 							className="text-primary-100 xs:flex pointer-events-auto absolute top-0 right-0 mr-[10%] hidden h-full flex-col gap-8"

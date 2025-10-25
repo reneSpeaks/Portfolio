@@ -16,7 +16,7 @@ export default function Introduction({ id }: { id: number }) {
 			<motion.h1
 				initial={{ opacity: 0, y: 30 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.5 }}
+				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 				className="text-4xl font-bold md:text-5xl">
 				Introduction
@@ -24,7 +24,7 @@ export default function Introduction({ id }: { id: number }) {
 			<motion.span
 				initial={{ opacity: 0, y: 30 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.5 }}
+				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 				className="max-w-6xl p-5 text-justify text-lg">
 				<ReactMarkdown
