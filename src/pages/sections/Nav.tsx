@@ -105,12 +105,12 @@ export default function Nav() {
 								className="hover:text-theme-primary-300 text-light cursor-pointer text-3xl duration-300 group-hover:pl-5 group-hover:font-bold"
 								onClick={() => {
 									setIsOpen(false);
-									setPageState('About');
+									setPageState('Works');
 								}}>
-								Contact
+								Works
 							</a>
 							<span className="text-light pointer-events-none absolute top-2 left-0 text-3xl opacity-0 duration-300 group-hover:opacity-100">
-								Contact
+								Works
 							</span>
 						</motion.li>
 						<motion.li variants={Item} className="group relative">
@@ -118,12 +118,12 @@ export default function Nav() {
 								className="hover:text-theme-primary-300 text-light cursor-pointer text-3xl duration-300 group-hover:pl-5 group-hover:font-bold"
 								onClick={() => {
 									setIsOpen(false);
-									setPageState('Works');
+									setPageState('About');
 								}}>
-								Works
+								Contact
 							</a>
 							<span className="text-light pointer-events-none absolute top-2 left-0 text-3xl opacity-0 duration-300 group-hover:opacity-100">
-								Works
+								Contact
 							</span>
 						</motion.li>
 						<motion.div

@@ -42,13 +42,13 @@ export default function Footer() {
 						</li>
 					))}
 					<li>
-						<a className="hover:text-theme-accent-200 cursor-pointer duration-300" onClick={() => setPageState('About')}>
-							Contact
+						<a className="hover:text-theme-accent-200 cursor-pointer duration-300" onClick={() => setPageState('Works')}>
+							Works
 						</a>
 					</li>
 					<li>
-						<a className="hover:text-theme-accent-200 cursor-pointer duration-300" onClick={() => setPageState('Works')}>
-							Works
+						<a className="hover:text-theme-accent-200 cursor-pointer duration-300" onClick={() => setPageState('About')}>
+							Contact
 						</a>
 					</li>
 				</ul>
