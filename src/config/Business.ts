@@ -24,5 +24,5 @@ export const BusinessLinks = [
 		animationLightData: linkedinLightData
 	},
 	{ name: 'GitHub', url: 'https://github.com/reneSpeaks', animationData: githubData, animationLightData: githubLightData },
-	{ name: 'Resume', url: 'https://renespeaks.github.io/Resume/', animationData: folderData, animationLightData: folderLightData }
+	{ name: 'Resume', url: '/WebsiteCV.pdf', animationData: folderData, animationLightData: folderLightData }
 ];
