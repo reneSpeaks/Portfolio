@@ -22,13 +22,16 @@ export default function Transition({ children }: { children: ReactNode }) {
 				<div className="bg-dark pointer-events-none z-57 flex h-full w-full items-center justify-center" />
 			</motion.div>
 			<motion.div variants={Loader} initial="initial" animate="animate" exit="exit" className="pointer-events-none z-56">
-				<svg
+				<motion.svg
 					xmlns="http://www.w3.org/2000/svg"
 					version="1.1"
 					width="281"
 					height="281"
 					viewBox="0 0 256 256"
-					className="fixed top-1/2 left-1/2 z-56 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg">
+					className="fixed top-1/2 left-1/2 z-56 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg"
+					initial={{ opacity: 0.7 }}
+					animate={{ opacity: [0.7, 1, 0.7] }}
+					transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
 					<defs>
 						<clipPath id="transition-r-clippath">
 							<path
@@ -90,7 +93,7 @@ export default function Transition({ children }: { children: ReactNode }) {
 							strokeWidth="70.34"
 						/>
 					</g>
-				</svg>
+				</motion.svg>
 			</motion.div>
 
 			<motion.div className="pointer-events-none" variants={Fade} initial="initial" animate="animate" exit="exit">
