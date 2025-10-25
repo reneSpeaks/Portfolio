@@ -3,20 +3,26 @@ import { spring, type Variants } from 'framer-motion';
 export const Hero: Variants = {
 	hidden: {
 		opacity: 0,
+		y: 30,
 		transition: {
-			duration: 0.3
+			duration: 0.3,
+			delay: 1
 		}
 	},
 	visible: {
 		opacity: 1,
+		y: 0,
 		transition: {
-			duration: 0.6
+			duration: 0.6,
+			delay: 1
 		}
 	},
 	exit: {
 		opacity: 0,
+		y: 30,
 		transition: {
-			duration: 0.3
+			duration: 0.3,
+			delay: 1
 		}
 	}
 };
