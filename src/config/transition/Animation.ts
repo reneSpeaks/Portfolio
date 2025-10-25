@@ -12,6 +12,18 @@ export const Loader: Variants = {
 	exit: { opacity: 1, transition: { duration: 0.5, delay: 0.5 } }
 };
 
+export const RRight: Variants = {
+	initial: { strokeDashoffset: 0, transition: { duration: 0.5 } },
+	animate: { strokeDashoffset: 463, transition: { duration: 0.5 } },
+	exit: { strokeDashoffset: 0, transition: { duration: 0.5 } }
+};
+
+export const RLeft: Variants = {
+	initial: { strokeDashoffset: 0, transition: { duration: 0.5 } },
+	animate: { strokeDashoffset: 280, transition: { duration: 0.5 } },
+	exit: { strokeDashoffset: 0, transition: { duration: 0.5 } }
+};
+
 export const StaggerItems: Variants = {
 	initial: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
 	animate: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },

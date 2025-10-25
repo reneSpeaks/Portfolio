@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
-import { Fade, Slide, StaggerItems, Background, Loader } from '@config/transition/Animation';
+import { Fade, Slide, StaggerItems, Background, Loader, RRight, RLeft } from '@config/transition/Animation';
 
 export default function Transition({ children }: { children: ReactNode }) {
 	return (
@@ -63,7 +63,11 @@ export default function Transition({ children }: { children: ReactNode }) {
 						</linearGradient>
 					</defs>
 					<g clipPath="url(#transition-r-clippath)">
-						<path
+						<motion.path
+							variants={RRight}
+							initial="initial"
+							animate="animate"
+							exit="exit"
 							d="M-.5,29.8l126.8-.1c29.9,2.5,57.4,17,57.4,47.4,0,13.4-4.3,24.4-17.4,37.2-.5.6-2.3,2.3-2.6,2.6-.3.3-1.1,1-1.1,1l-.5.4-32.9,28.8,118.9,105.6"
 							fill="none"
 							stroke="url(#transition-r-linear-gradient)"
@@ -73,7 +77,11 @@ export default function Transition({ children }: { children: ReactNode }) {
 						/>
 					</g>
 					<g clipPath="url(#transition-r-clippath-1)">
-						<path
+						<motion.path
+							variants={RLeft}
+							initial="initial"
+							animate="animate"
+							exit="exit"
 							d="M154.6,249.8l-116.8-102.6c8.3-8.3,91.4-81.4,91.4-81.4"
 							fill="none"
 							stroke="url(#transition-r-linear-gradient1)"
