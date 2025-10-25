@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
 
@@ -21,6 +21,22 @@ import { ProjectProvider } from '@context/ProjectContext';
 
 function App() {
 	const location = useLocation();
+	const isTabActive = useRef(true);
+
+	useEffect(() => {
+		const handleVisibilityChange = () => {
+			isTabActive.current = document.visibilityState === 'visible';
+			if (!isTabActive.current) {
+				document.title = 'Be sure to check this out before closing the internet. :p';
+			} else {
+				document.title = 'René Weiberlenn - Web Developer';
+			}
+		};
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+		return () => {
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		};
+	}, []);
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });

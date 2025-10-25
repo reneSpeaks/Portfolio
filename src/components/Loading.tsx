@@ -91,7 +91,7 @@ function Loading() {
 										strokeWidth="70.34"
 										initial={{ strokeDashoffset: 463 }}
 										animate={{ strokeDashoffset: pageState !== 'Intro' ? 463 : 0 }}
-										transition={{ duration: 1.2, ease: 'easeInOut', delay: 1.2 }}
+										transition={{ duration: 1.2, ease: 'easeInOut', delay: 1 }}
 									/>
 								</g>
 								<g clipPath="url(#clippath-1)">
@@ -104,7 +104,7 @@ function Loading() {
 										strokeWidth="70.34"
 										initial={{ strokeDashoffset: 280 }}
 										animate={{ strokeDashoffset: pageState !== 'Intro' ? 280 : 0 }}
-										transition={{ duration: 1.2, ease: 'easeInOut', delay: 1.5 }}
+										transition={{ duration: 1.2, ease: 'easeInOut', delay: 1.3 }}
 									/>
 								</g>
 							</svg>
