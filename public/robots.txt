@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+Allow: /imprint
+Allow: /projects/0
+Allow: /projects/1
+Sitemap: https://www.weiberlenn.name/sitemap.xml
