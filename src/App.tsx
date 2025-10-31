@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from '@pages/Home';
 import Projects from '@pages/Projects';
 import Imprint from '@pages/Imprint';
+import Test from '@pages/Test';
 import Nav from '@pages/sections/Nav';
 
 import PageWrapper from '@components/PageWrapper';
@@ -56,6 +57,7 @@ function App() {
 										<Route index element={<Home />} />
 										<Route path="/projects/:projectId" element={<Projects />} />
 										<Route path="/imprint" element={<Imprint />} />
+										<Route path="/test" element={<Test />} />
 										<Route path="*" element={<Home />} />
 									</Routes>
 								</AnimatePresence>
