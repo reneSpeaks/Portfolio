@@ -19,5 +19,12 @@ export default defineConfig({
 			'@config': '/src/config',
 			'@pages': '/src/pages'
 		}
+	},
+	build: {
+		minify: 'terser',
+		terserOptions: {
+			compress: true,
+			mangle: true
+		}
 	}
 });
